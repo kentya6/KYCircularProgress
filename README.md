@@ -9,6 +9,9 @@ Flexible progress bar written in Swift.
 - [x] Progress Closure
 
 ## Demo
+<p align="center" >
+<img src="http://kentya6.github.io/KYCircularProgress/demo.gif" width="318" height="509"/>
+</p>
 
 ## Requirement
 * iOS7.0+
@@ -17,7 +20,7 @@ Flexible progress bar written in Swift.
 ## Usage
 #### Create KYCircularProgress
 ```swift
-var circularProgress: KYCircularProgress! = KYCircularProgress(frame: self.bounds)
+var circularProgress: KYCircularProgress! = KYCircularProgress(frame: self.view.bounds)
 ```
 
 #### Gradation Progress Bar
