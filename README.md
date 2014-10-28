@@ -15,7 +15,7 @@ Flexible progress bar written in Swift.
 
 ## Requirement
 * iOS7.0+
-* Xcode6.0.1 (Swift 1.0)
+* Xcode6.0.1+
 
 ## Usage
 #### Create KYCircularProgress
@@ -23,15 +23,15 @@ Flexible progress bar written in Swift.
 var circularProgress: KYCircularProgress! = KYCircularProgress(frame: self.view.bounds)
 ```
 
-#### Gradation Progress Bar
+#### Gradation Color
 ```swift
 // support Hex color to RGB color
-circularProgress.colors = [circularProgress.colorHex(0xA6E39D).CGColor!, circularProgress.colorHex(0xAEC1E3).CGColor!, circularProgress.colorHex(0xE1A5CB).CGColor!, circularProgress.colorHex(0xF3C0AB).CGColor!]
+circularProgress.colors = [0xA6E39D, 0xAEC1E3, 0xE1A5CB, 0xF3C0AB]
 ```
 
 #### Progress Closure
 ```swift
-circularProgress.progressChangedClosure({ (progress: Double, circular: KYCircularProgress) in
+circularProgress.progressChangedClosure({ (progress: Double, circularView: KYCircularProgress) in
 	println("progress: \(progress)")
 })
 ```
@@ -53,7 +53,9 @@ circularProgress.path = path
 
 ## Licence
 
-MIT
+The MIT License (MIT)
+
+Copyright (c) 2014 Kengo YOKOYAMA
 
 ## Author
 
