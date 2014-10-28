@@ -47,9 +47,17 @@ class KYCircularProgress: UIView {
             self.progressView.shapeLayer().path = self.path?.CGPath
         }
     }
-    var colors: [AnyObject]? {
+    var colors: [Int]? {
         didSet {
-            self.gradientLayer.colors = self.colors?
+            var convertedColors: [CGColor] = []
+            if let inputColors = self.colors {
+                for (index, hexColor) in enumerate(self.colors!) {
+                    convertedColors.append(self.colorHex(hexColor).CGColor!)
+                }
+            } else {
+                convertedColors = [self.colorHex(0x9ACDE7).CGColor!, self.colorHex(0xE7A5C9).CGColor!]
+            }
+            self.gradientLayer.colors = convertedColors
         }
     }
     

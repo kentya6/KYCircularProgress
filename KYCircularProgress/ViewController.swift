@@ -52,19 +52,14 @@ class ViewController: UIViewController {
     
     func setupKYCircularProgress2() {
         circularProgress2 = KYCircularProgress(frame: CGRectMake(0, circularProgress1.frame.size.height, self.view.frame.size.width/2, self.view.frame.size.height/3))
-        circularProgress2.colors = [circularProgress2.colorHex(0xA6E39D).CGColor!,
-                                circularProgress2.colorHex(0xAEC1E3).CGColor!,
-                                circularProgress2.colorHex(0xE1A5CB).CGColor!,
-                                circularProgress2.colorHex(0xF3C0AB).CGColor!
-        ]
+        circularProgress2.colors = [0xA6E39D, 0xAEC1E3, 0xAEC1E3, 0xF3C0AB]
         
         self.view.addSubview(circularProgress2)
     }
     
     func setupKYCircularProgress3() {
         circularProgress3 = KYCircularProgress(frame: CGRectMake(circularProgress2.frame.size.width*1.25, circularProgress1.frame.size.height*1.15, self.view.frame.size.width/2, self.view.frame.size.height/2))
-        circularProgress3.colors = [circularProgress3.colorHex(0xFFF77A).CGColor!,
-                                circularProgress3.colorHex(0xF3C0AB).CGColor!]
+        circularProgress3.colors = [0xFFF77A, 0xF3C0AB]
         circularProgress3.lineWidth = 3.0
         
         let path = UIBezierPath()
