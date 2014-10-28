@@ -5,8 +5,8 @@ Flexible progress bar written in Swift.
 
 ## Features
 - [x] Gradation Color
-- [x] UIBezierPath Progress Bar
 - [x] Progress Closure
+- [x] UIBezierPath Progress Bar
 
 ## Demo
 <p align="center" >
