@@ -79,7 +79,7 @@ class KYCircularProgress: UIView {
         self.progressView.shapeLayer().strokeColor = self.tintColor.CGColor
     }
     
-    func progressChangedBlock(completion: progressChangedHandler) {
+    func progressChangedClosure(completion: progressChangedHandler) {
         progressChangedClosure = completion
     }
     

@@ -31,7 +31,7 @@ circularProgress.colors = [circularProgress.colorHex(0xA6E39D).CGColor!, circula
 
 #### Progress Closure
 ```swift
-circularProgress.progressChangedBlock({ (progress: Double, circular: KYCircularProgress) in
+circularProgress.progressChangedClosure({ (progress: Double, circular: KYCircularProgress) in
 	println("progress: \(progress)")
 })
 ```
