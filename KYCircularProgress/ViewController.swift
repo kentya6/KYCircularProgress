@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         circularProgress1.path = UIBezierPath(arcCenter: CGPointMake(center.0, center.1), radius: CGFloat(circularProgress1.frame.size.width/3.0), startAngle: CGFloat(M_PI), endAngle: CGFloat(0.0), clockwise: true)
         circularProgress1.lineWidth = 8.0
         
-        let textLabel = UILabel(frame: CGRectMake(self.view.frame.size.width/2 - 30.0, 170.0, 80.0, 32.0))
+        let textLabel = UILabel(frame: CGRectMake(circularProgress1.frame.origin.x + 120.0, 170.0, 80.0, 32.0))
         textLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 32)
         textLabel.textAlignment = .Center
         textLabel.textColor = circularProgress1.colorHex(0xA6E39D)
