@@ -51,7 +51,7 @@ class KYCircularProgress: UIView {
         didSet {
             var convertedColors: [CGColor] = []
             if let inputColors = self.colors {
-                for (index, hexColor) in enumerate(self.colors!) {
+                for hexColor in self.colors! {
                     convertedColors.append(self.colorHex(hexColor).CGColor!)
                 }
             } else {
@@ -92,9 +92,9 @@ class KYCircularProgress: UIView {
     }
     
     func colorHex(rgb: Int) -> UIColor {
-        return UIColor(red: CGFloat((rgb & 0xFF0000) >> 16)/255.0,
-                       green: CGFloat((rgb & 0xFF00) >> 8)/255.0,
-                       blue: CGFloat(rgb & 0xFF)/255.0,
+        return UIColor(red: CGFloat((rgb & 0xFF0000) >> 16) / 255.0,
+                       green: CGFloat((rgb & 0xFF00) >> 8) / 255.0,
+                       blue: CGFloat(rgb & 0xFF) / 255.0,
                        alpha: 0.55)
     }
 }
@@ -125,7 +125,7 @@ class KYCircularShapeView: UIView {
         super.layoutSubviews()
         
         if self.startAngle == self.endAngle {
-            self.endAngle = self.startAngle + M_PI * 2
+            self.endAngle = self.startAngle + (M_PI * 2)
         }
         self.shapeLayer().path = self.shapeLayer().path ?? self.layoutPath().CGPath
     }
