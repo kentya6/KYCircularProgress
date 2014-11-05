@@ -49,7 +49,7 @@ class KYCircularProgress: UIView {
     }
     var colors: [Int]? {
         didSet {
-            var convertedColors: [CGColor] = []
+            var convertedColors: [AnyObject] = []
             if let inputColors = self.colors {
                 for hexColor in self.colors! {
                     convertedColors.append(self.colorHex(hexColor).CGColor!)
