@@ -18,8 +18,8 @@ class KYCircularProgress: UIView {
     var progressDifference = 0
     var gradientLayer: CAGradientLayer!
     var progress: Double = 0.0 {
-        didSet(newValue) {
-            let clipProgress = max( min(newValue, 1.0), 0.0)
+        didSet {
+            let clipProgress = max( min(oldValue, 1.0), 0.0)
             self.progressView.updateProgress(clipProgress)
             
             if let progressChanged = progressChangedClosure {
@@ -29,27 +29,27 @@ class KYCircularProgress: UIView {
     }
     var startAngle: Double = 0.0 {
         didSet {
-            self.progressView.startAngle = self.startAngle
+            self.progressView.startAngle = oldValue
         }
     }
     var endAngle: Double = 0.0 {
         didSet {
-            self.progressView.endAngle = self.endAngle
+            self.progressView.endAngle = oldValue
         }
     }
     var lineWidth: Double = 8.0 {
-        didSet {
-            self.progressView.shapeLayer().lineWidth = CGFloat(self.lineWidth)
+        willSet {
+            self.progressView.shapeLayer().lineWidth = CGFloat(newValue)
         }
     }
     var path: UIBezierPath? {
-        didSet {
-            self.progressView.shapeLayer().path = self.path?.CGPath
+        willSet {
+            self.progressView.shapeLayer().path = newValue?.CGPath
         }
     }
     var colors: [Int]? {
-        didSet(newValue) {
-            updateColors(newValue)
+        didSet {
+            updateColors(oldValue)
         }
     }
     var progressAlpha: CGFloat = 0.55 {
