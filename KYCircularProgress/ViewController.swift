@@ -38,8 +38,8 @@ class ViewController: UIViewController {
         let textLabel = UILabel(frame: CGRectMake(circularProgress1.frame.origin.x + 120.0, 170.0, 80.0, 32.0))
         textLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 32)
         textLabel.textAlignment = .Center
-        textLabel.textColor = circularProgress1.colorHex(0xA6E39D)
-        textLabel.backgroundColor = UIColor.clearColor()
+        textLabel.textColor = UIColor.greenColor()
+        textLabel.alpha = 0.3
         self.view.addSubview(textLabel)
         
         circularProgress1.progressChangedClosure({ (progress: Double, circularView: KYCircularProgress) in
