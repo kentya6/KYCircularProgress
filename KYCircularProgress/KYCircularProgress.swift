@@ -12,10 +12,8 @@ import UIKit
 // MARK: - KYCircularProgress
 class KYCircularProgress: UIView {
     typealias progressChangedHandler = (progress: Double, circularView: KYCircularProgress) -> ()
-    let kShapeViewAnimation = "kShapeViewAnimation"
     var progressChangedClosure: progressChangedHandler?
     var progressView: KYCircularShapeView!
-    var progressDifference = 0
     var gradientLayer: CAGradientLayer!
     var progress: Double = 0.0 {
         didSet {
