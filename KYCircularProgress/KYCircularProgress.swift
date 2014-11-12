@@ -48,16 +48,13 @@ class KYCircularProgress: UIView {
         }
     }
     var colors: [Int]? {
+        didSet(newValue) {
+            updateColors(newValue)
+        }
+    }
+    var progressAlpha: CGFloat = 0.55 {
         didSet {
-            var convertedColors: [AnyObject] = []
-            if let inputColors = self.colors {
-                for hexColor in self.colors! {
-                    convertedColors.append(self.colorHex(hexColor).CGColor!)
-                }
-            } else {
-                convertedColors = [self.colorHex(0x9ACDE7).CGColor!, self.colorHex(0xE7A5C9).CGColor!]
-            }
-            self.gradientLayer.colors = convertedColors
+            updateColors(self.colors)
         }
     }
     
@@ -95,7 +92,19 @@ class KYCircularProgress: UIView {
         return UIColor(red: CGFloat((rgb & 0xFF0000) >> 16) / 255.0,
                        green: CGFloat((rgb & 0xFF00) >> 8) / 255.0,
                        blue: CGFloat(rgb & 0xFF) / 255.0,
-                       alpha: 0.55)
+                       alpha: progressAlpha)
+    }
+    
+    func updateColors(colors: [Int]?) -> () {
+        var convertedColors: [AnyObject] = []
+        if let inputColors = self.colors {
+            for hexColor in inputColors {
+                convertedColors.append(self.colorHex(hexColor).CGColor!)
+            }
+        } else {
+            convertedColors = [self.colorHex(0x9ACDE7).CGColor!, self.colorHex(0xE7A5C9).CGColor!]
+        }
+        self.gradientLayer.colors = convertedColors
     }
 }
 
