@@ -17,11 +17,21 @@ class KYCircularProgress: UIView {
     private var gradientLayer: CAGradientLayer!
     var progress: Double = 0.0 {
         didSet {
-            let clipProgress = max( min(oldValue, 1.0), 0.0)
-            self.progressView.updateProgress(clipProgress)
+            // MARK: - This code can **not** compile on Swift1.1 compiler with -O optimization option. Wait Swift1.2 compiler.
+            // see (http://stackoverflow.com/questions/28516677/swift-issue-using-max-and-min-sequentially-while-archiving-on-xcode)
+//            let clipProgress = max( min(oldValue, Double(1.0)), Double(0.0))            
+            
+            // MARK: - This code can compile on Swift1.1 compiler with -O optimization option.
+            if self.progress < 0.0 {
+                self.progress = 0.0
+            } else if self.progress > 1.0 {
+                self.progress = 1.0
+            }
+            
+            self.progressView.updateProgress(self.progress)
             
             if let progressChanged = progressChangedClosure {
-                progressChanged(progress: clipProgress, circularView: self)
+                progressChanged(progress: self.progress, circularView: self)
             }
         }
     }
