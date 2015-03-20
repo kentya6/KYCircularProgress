@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  KYCircularProgress
 //
-//  Created by Y.K on 2014/10/02.
-//  Copyright (c) 2014年 Yokoyama Kengo. All rights reserved.
+//  Created by Kengo Yokoyama on 2014/10/02.
+//  Copyright (c) 2014 Kengo Yokoyama. All rights reserved.
 //
 
 import UIKit
