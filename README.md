@@ -16,16 +16,16 @@ Flexible progress bar written in Swift.
 - [x] Gradation Color
 - [x] Progress Closure
 - [x] UIBezierPath Progress Bar
-- [x] Progress gauge guide
+- [x] Progress Gauge Guide
 
 ## ToDo
 1. Customizable on Storyboard
 2. Installation via CocoaPods
-3. Progress change animation
+3. Progress Change Animation
 
 ## Demo
 <p align="center" >
-<img src="http://kentya6.github.io/KYCircularProgress/demo.gif" width="318" height="509"/>
+<img src="https://raw.githubusercontent.com/kentya6/KYCircularProgress/gh-pages/demo.gif" width="232" height="418"/>
 </p>
 
 ## Requirement
