@@ -78,12 +78,6 @@ class KYCircularProgress: UIView {
             self.guideLayer?.backgroundColor = newValue.CGColor
         }
     }
-    
-    var progressAlpha: CGFloat = 0.55 {
-        didSet {
-            updateColors(self.colors)
-        }
-    }
 
     var showProgressGuide: Bool = false {
         willSet {
@@ -121,7 +115,7 @@ class KYCircularProgress: UIView {
         gradientLayer.startPoint = CGPointMake(0, 0.5);
         gradientLayer.endPoint = CGPointMake(1, 0.5);
         gradientLayer.mask = self.progressView.shapeLayer();
-        gradientLayer.colors = self.colors ?? [colorHex(0x9ACDE7).CGColor!, colorHex(0xE7A5C9).CGColor!]
+        gradientLayer.colors = self.colors ?? [colorHex(0x9ACDE755).CGColor!, colorHex(0xE7A5C955).CGColor!]
         
         self.layer.addSublayer(gradientLayer)
     }
@@ -150,11 +144,11 @@ class KYCircularProgress: UIView {
         progressChangedClosure = completion
     }
     
-    private func colorHex(rgb: Int) -> UIColor {
-        return UIColor(red: CGFloat((rgb & 0xFF0000) >> 16) / 255.0,
-                       green: CGFloat((rgb & 0xFF00) >> 8) / 255.0,
-                       blue: CGFloat(rgb & 0xFF) / 255.0,
-                       alpha: progressAlpha)
+    private func colorHex(rgba: Int) -> UIColor {
+        return UIColor(red: CGFloat((rgba & 0xFF000000) >> 24) / 255.0,
+                     green: CGFloat((rgba & 0x00FF0000) >> 16) / 255.0,
+                      blue: CGFloat((rgba & 0x0000FF00) >> 8)  / 255.0,
+                     alpha: CGFloat((rgba & 0x000000FF))       / 255.0)
     }
     
     private func updateColors(colors: [Int]?) -> () {
@@ -164,7 +158,7 @@ class KYCircularProgress: UIView {
                 convertedColors.append(self.colorHex(hexColor).CGColor!)
             }
         } else {
-            convertedColors = [self.colorHex(0x9ACDE7).CGColor!, self.colorHex(0xE7A5C9).CGColor!]
+            convertedColors = [self.colorHex(0x9ACDE7FF).CGColor!, self.colorHex(0xE7A5C9FF).CGColor!]
         }
         self.gradientLayer.colors = convertedColors
     }

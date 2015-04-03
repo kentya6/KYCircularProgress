@@ -41,7 +41,7 @@ var circularProgress: KYCircularProgress! = KYCircularProgress(frame: self.view.
 #### Gradation Color
 ```swift
 // support Hex color to RGB color
-circularProgress.colors = [0xA6E39D, 0xAEC1E3, 0xE1A5CB, 0xF3C0AB]
+circularProgress.colors = [0xA6E39D11, 0xAEC1E355, 0xAEC1E3AA, 0xF3C0ABFF]
 ```
 
 #### Progress Closure
