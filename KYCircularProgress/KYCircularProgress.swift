@@ -67,7 +67,7 @@ class KYCircularProgress: UIView {
             self.progressGuideView?.shapeLayer().path = newValue?.CGPath
         }
     }
-    var colors: [Int]? {
+    var colors: [AnyObject]? {
         didSet {
             updateColors(oldValue)
         }
@@ -151,11 +151,15 @@ class KYCircularProgress: UIView {
                      alpha: CGFloat((rgba & 0x000000FF))       / 255.0)
     }
     
-    private func updateColors(colors: [Int]?) -> () {
+    private func updateColors(colors: [AnyObject]?) -> () {
         var convertedColors: [AnyObject] = []
         if let inputColors = self.colors {
-            for hexColor in inputColors {
-                convertedColors.append(self.colorHex(hexColor).CGColor!)
+            for color in inputColors {
+                if let uiColor = color as? UIColor {
+                    convertedColors.append(uiColor.CGColor!)
+                } else if let hexColor = color as? Int {
+                    convertedColors.append(self.colorHex(hexColor).CGColor!)
+                }
             }
         } else {
             convertedColors = [self.colorHex(0x9ACDE7FF).CGColor!, self.colorHex(0xE7A5C9FF).CGColor!]
