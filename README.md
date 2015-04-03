@@ -16,12 +16,12 @@ Flexible progress bar written in Swift.
 - [x] Gradation Color
 - [x] Progress Closure
 - [x] UIBezierPath Progress Bar
+- [x] Progress gauge guide
 
 ## ToDo
 1. Customizable on Storyboard
 2. Installation via CocoaPods
-3. Progress gauge guide
-4. Progress change animation
+3. Progress change animation
 
 ## Demo
 <p align="center" >

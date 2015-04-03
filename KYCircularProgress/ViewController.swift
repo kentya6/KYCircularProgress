@@ -34,6 +34,8 @@ class ViewController: UIViewController {
         let center = (CGFloat(160.0), CGFloat(200.0))
         circularProgress1.path = UIBezierPath(arcCenter: CGPointMake(center.0, center.1), radius: CGFloat(circularProgress1.frame.size.width/3.0), startAngle: CGFloat(M_PI), endAngle: CGFloat(0.0), clockwise: true)
         circularProgress1.lineWidth = 8.0
+        circularProgress1.showProgressGuide = true
+        circularProgress1.progressGuideColor = UIColor(red: 0.1, green: 0.1, blue: 0.5, alpha: 0.2)
         
         let textLabel = UILabel(frame: CGRectMake(circularProgress1.frame.origin.x + 120.0, 170.0, 80.0, 32.0))
         textLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 32)
