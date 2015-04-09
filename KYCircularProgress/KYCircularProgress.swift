@@ -21,53 +21,49 @@ class KYCircularProgress: UIView {
     
     var progress: Double = 0.0 {
         didSet {
-            // MARK: - This code can **not** compile on Swift1.1 compiler with -O optimization option. Wait Swift1.2 compiler.
-            // see (http://stackoverflow.com/questions/28516677/swift-issue-using-max-and-min-sequentially-while-archiving-on-xcode)
-//            let clipProgress = max( min(oldValue, Double(1.0)), Double(0.0))            
-            
-            // MARK: - This code can compile on Swift1.1 compiler with -O optimization option.
-            if self.progress < 0.0 {
-                self.progress = 0.0
-            } else if self.progress > 1.0 {
-                self.progress = 1.0
-            }
-            
-            self.progressView.updateProgress(self.progress)
+            let clipProgress = max( min(oldValue, Double(1.0)), Double(0.0))
+            self.progressView.updateProgress(clipProgress)
             
             if let progressChanged = progressChangedClosure {
                 progressChanged(progress: self.progress, circularView: self)
             }
         }
     }
+    
     var startAngle: Double = 0.0 {
         didSet {
             self.progressView.startAngle = oldValue
             self.progressGuideView?.startAngle = oldValue
         }
     }
+    
     var endAngle: Double = 0.0 {
         didSet {
             self.progressView.endAngle = oldValue
             self.progressGuideView?.endAngle = oldValue
         }
     }
+    
     var lineWidth: Double = 8.0 {
         willSet {
             self.progressView.shapeLayer().lineWidth = CGFloat(newValue)
         }
     }
+    
     var guideLineWidth: Double = 8.0 {
         willSet {
             self.progressGuideView?.shapeLayer().lineWidth = CGFloat(newValue)
         }
     }
+    
     var path: UIBezierPath? {
         willSet {
             self.progressView.shapeLayer().path = newValue?.CGPath
             self.progressGuideView?.shapeLayer().path = newValue?.CGPath
         }
     }
-    var colors: [AnyObject]? {
+    
+    var colors: [UIColor]? {
         didSet {
             updateColors(oldValue)
         }
@@ -115,7 +111,7 @@ class KYCircularProgress: UIView {
         gradientLayer.startPoint = CGPointMake(0, 0.5);
         gradientLayer.endPoint = CGPointMake(1, 0.5);
         gradientLayer.mask = self.progressView.shapeLayer();
-        gradientLayer.colors = self.colors ?? [colorHex(0x9ACDE755).CGColor!, colorHex(0xE7A5C955).CGColor!]
+        gradientLayer.colors = self.colors ?? [UIColor(rgba: 0x9ACDE755).CGColor, UIColor(rgba: 0xE7A5C955).CGColor]
         
         self.layer.addSublayer(gradientLayer)
     }
@@ -144,25 +140,14 @@ class KYCircularProgress: UIView {
         progressChangedClosure = completion
     }
     
-    private func colorHex(rgba: Int) -> UIColor {
-        return UIColor(red: CGFloat((rgba & 0xFF000000) >> 24) / 255.0,
-                     green: CGFloat((rgba & 0x00FF0000) >> 16) / 255.0,
-                      blue: CGFloat((rgba & 0x0000FF00) >> 8)  / 255.0,
-                     alpha: CGFloat((rgba & 0x000000FF))       / 255.0)
-    }
-    
-    private func updateColors(colors: [AnyObject]?) -> () {
-        var convertedColors: [AnyObject] = []
+    private func updateColors(colors: [UIColor]?) -> () {
+        var convertedColors: [CGColorRef] = []
         if let inputColors = self.colors {
             for color in inputColors {
-                if let uiColor = color as? UIColor {
-                    convertedColors.append(uiColor.CGColor!)
-                } else if let hexColor = color as? Int {
-                    convertedColors.append(self.colorHex(hexColor).CGColor!)
-                }
+                convertedColors.append(color.CGColor)
             }
         } else {
-            convertedColors = [self.colorHex(0x9ACDE7FF).CGColor!, self.colorHex(0xE7A5C9FF).CGColor!]
+            convertedColors = [UIColor(rgba: 0x9ACDE7FF).CGColor, UIColor(rgba: 0xE7A5C9FF).CGColor]
         }
         self.gradientLayer.colors = convertedColors
     }
@@ -178,7 +163,7 @@ class KYCircularShapeView: UIView {
     }
     
     private func shapeLayer() -> CAShapeLayer {
-        return self.layer as CAShapeLayer
+        return self.layer as! CAShapeLayer
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -209,5 +194,22 @@ class KYCircularShapeView: UIView {
         CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
         self.shapeLayer().strokeEnd = CGFloat(progress)
         CATransaction.commit()
+    }
+}
+
+// MARK: - UIColor Extension
+extension UIColor {
+    convenience init(rgba: Int64) {
+        var red:   CGFloat = 0.0
+        var green: CGFloat = 0.0
+        var blue:  CGFloat = 0.0
+        var alpha: CGFloat = 0.0
+        
+        red   = CGFloat((rgba & 0xFF000000) >> 24) / 255.0
+        green = CGFloat((rgba & 0x00FF0000) >> 16) / 255.0
+        blue  = CGFloat((rgba & 0x0000FF00) >> 8)  / 255.0
+        alpha = CGFloat( rgba & 0x000000FF)        / 255.0
+        
+        self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
 }

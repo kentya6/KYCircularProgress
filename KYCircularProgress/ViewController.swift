@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         self.circularProgress1 = KYCircularProgress(frame: CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/2))
         let center = (CGFloat(160.0), CGFloat(200.0))
         self.circularProgress1.path = UIBezierPath(arcCenter: CGPointMake(center.0, center.1), radius: CGFloat(circularProgress1.frame.size.width/3.0), startAngle: CGFloat(M_PI), endAngle: CGFloat(0.0), clockwise: true)
-        self.circularProgress1.colors = [0xA6E39DAA, 0xAEC1E3AA, 0xAEC1E3AA, 0xF3C0ABAA]
+        self.circularProgress1.colors = [UIColor(rgba: 0xA6E39DAA), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABAA)]
         self.circularProgress1.lineWidth = 8.0
         self.circularProgress1.showProgressGuide = true
         self.circularProgress1.progressGuideColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.4)
@@ -51,14 +51,14 @@ class ViewController: UIViewController {
     
     func configureKYCircularProgress2() {
         self.circularProgress2 = KYCircularProgress(frame: CGRectMake(0, self.circularProgress1.frame.size.height, self.view.frame.size.width/2, self.view.frame.size.height/3))
-        self.circularProgress2.colors = [0xA6E39D11, 0xAEC1E355, 0xAEC1E3AA, 0xF3C0ABFF]
+        self.circularProgress2.colors = [UIColor(rgba: 0xA6E39D11), UIColor(rgba: 0xAEC1E355), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABFF)]
         
         self.view.addSubview(self.circularProgress2)
     }
     
     func configureKYCircularProgress3() {
         self.circularProgress3 = KYCircularProgress(frame: CGRectMake(self.circularProgress2.frame.size.width*1.25, circularProgress1.frame.size.height*1.15, self.view.frame.size.width/2, self.view.frame.size.height/2))
-        self.circularProgress3.colors = [UIColor.purpleColor(), 0xFFF77A55, UIColor.orangeColor()]
+        self.circularProgress3.colors = [UIColor.purpleColor(), UIColor(rgba: 0xFFF77A55), UIColor.orangeColor()]
         self.circularProgress3.lineWidth = 3.0
         
         let path = UIBezierPath()
