@@ -26,9 +26,11 @@ class ViewController: UIViewController {
     }
 
     func configureKYCircularProgress1() {
-        circularProgress1 = KYCircularProgress(frame: CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/2))
-        let center = (CGFloat(160.0), CGFloat(200.0))
-        circularProgress1.path = UIBezierPath(arcCenter: CGPointMake(center.0, center.1), radius: CGFloat(circularProgress1.frame.size.width/3.0), startAngle: CGFloat(M_PI), endAngle: CGFloat(0.0), clockwise: true)
+        let circularProgress1Frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)/2)
+        circularProgress1 = KYCircularProgress(frame: circularProgress1Frame)
+        
+        let center = CGPoint(x: 160.0, y: 200.0)
+        circularProgress1.path = UIBezierPath(arcCenter: center, radius: CGFloat(CGRectGetWidth(circularProgress1.frame)/3), startAngle: CGFloat(M_PI), endAngle: CGFloat(0.0), clockwise: true)
         circularProgress1.colors = [UIColor(rgba: 0xA6E39DAA), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABAA)]
         circularProgress1.lineWidth = 8.0
         circularProgress1.showProgressGuide = true
@@ -50,14 +52,18 @@ class ViewController: UIViewController {
     }
     
     func configureKYCircularProgress2() {
-        circularProgress2 = KYCircularProgress(frame: CGRectMake(0, circularProgress1.frame.size.height, self.view.frame.size.width/2, self.view.frame.size.height/3))
+        let circularProgress2Frame = CGRectMake(0, CGRectGetHeight(circularProgress1.frame), CGRectGetWidth(self.view.frame)/2, CGRectGetHeight(self.view.frame)/3)
+        circularProgress2 = KYCircularProgress(frame: circularProgress2Frame)
+        
         circularProgress2.colors = [UIColor(rgba: 0xA6E39D11), UIColor(rgba: 0xAEC1E355), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABFF)]
         
         self.view.addSubview(circularProgress2)
     }
     
     func configureKYCircularProgress3() {
-        circularProgress3 = KYCircularProgress(frame: CGRectMake(circularProgress2.frame.size.width*1.25, circularProgress1.frame.size.height*1.15, self.view.frame.size.width/2, self.view.frame.size.height/2))
+        let circularProgress3Frame = CGRectMake(CGRectGetWidth(circularProgress2.frame)*1.25, CGRectGetHeight(circularProgress1.frame)*1.15, CGRectGetWidth(self.view.frame)/2, CGRectGetHeight(self.view.frame)/2)
+        circularProgress3 = KYCircularProgress(frame: circularProgress3Frame)
+        
         circularProgress3.colors = [UIColor.purpleColor(), UIColor(rgba: 0xFFF77A55), UIColor.orangeColor()]
         circularProgress3.lineWidth = 3.0
         
