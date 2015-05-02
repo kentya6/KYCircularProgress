@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         textLabel.textAlignment = .Center
         textLabel.textColor = UIColor.greenColor()
         textLabel.alpha = 0.3
-        self.view.addSubview(textLabel)
+        circularProgress1.addSubview(textLabel)
         
         circularProgress1.progressChangedClosure({ (progress: Double, circularView: KYCircularProgress) in
             println("progress: \(progress)")
