@@ -24,9 +24,7 @@ class KYCircularProgress: UIView {
             let clipProgress = max( min(oldValue, Double(1.0)), Double(0.0))
             progressView.updateProgress(clipProgress)
             
-            if let progressChanged = progressChangedClosure {
-                progressChanged(progress: clipProgress, circularView: self)
-            }
+            progressChangedClosure?(progress: clipProgress, circularView: self)
         }
     }
     
