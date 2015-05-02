@@ -185,7 +185,7 @@ class KYCircularShapeView: UIView {
     }
     
     private func layoutPath() -> UIBezierPath {
-        var halfWidth = CGFloat(self.frame.size.width / 2.0)
+        let halfWidth = CGFloat(CGRectGetWidth(self.frame) / 2.0)
         return UIBezierPath(arcCenter: CGPointMake(halfWidth, halfWidth), radius: halfWidth - shapeLayer().lineWidth, startAngle: CGFloat(startAngle), endAngle: CGFloat(endAngle), clockwise: true)
     }
     
@@ -200,15 +200,10 @@ class KYCircularShapeView: UIView {
 // MARK: - UIColor Extension
 extension UIColor {
     convenience init(rgba: Int64) {
-        var red:   CGFloat = 0.0
-        var green: CGFloat = 0.0
-        var blue:  CGFloat = 0.0
-        var alpha: CGFloat = 0.0
-        
-        red   = CGFloat((rgba & 0xFF000000) >> 24) / 255.0
-        green = CGFloat((rgba & 0x00FF0000) >> 16) / 255.0
-        blue  = CGFloat((rgba & 0x0000FF00) >> 8)  / 255.0
-        alpha = CGFloat( rgba & 0x000000FF)        / 255.0
+        let red   = CGFloat((rgba & 0xFF000000) >> 24) / 255.0
+        let green = CGFloat((rgba & 0x00FF0000) >> 16) / 255.0
+        let blue  = CGFloat((rgba & 0x0000FF00) >> 8)  / 255.0
+        let alpha = CGFloat( rgba & 0x000000FF)        / 255.0
         
         self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
