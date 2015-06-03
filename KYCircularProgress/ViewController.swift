@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     }
 
     func configureKYCircularProgress1() {
-        let circularProgress1Frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)/2)
+        let circularProgress1Frame = CGRectMake(0, 0, CGRectGetWidth(view.frame), CGRectGetHeight(view.frame)/2)
         circularProgress1 = KYCircularProgress(frame: circularProgress1Frame)
         
         let center = CGPoint(x: 160.0, y: 200.0)
@@ -48,20 +48,20 @@ class ViewController: UIViewController {
             textLabel.text = "\(Int(progress * 100.0))%"
         })
         
-        self.view.addSubview(circularProgress1)
+        view.addSubview(circularProgress1)
     }
     
     func configureKYCircularProgress2() {
-        let circularProgress2Frame = CGRectMake(0, CGRectGetHeight(circularProgress1.frame), CGRectGetWidth(self.view.frame)/2, CGRectGetHeight(self.view.frame)/3)
+        let circularProgress2Frame = CGRectMake(0, CGRectGetHeight(circularProgress1.frame), CGRectGetWidth(view.frame)/2, CGRectGetHeight(view.frame)/3)
         circularProgress2 = KYCircularProgress(frame: circularProgress2Frame)
         
         circularProgress2.colors = [UIColor(rgba: 0xA6E39D11), UIColor(rgba: 0xAEC1E355), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABFF)]
         
-        self.view.addSubview(circularProgress2)
+        view.addSubview(circularProgress2)
     }
     
     func configureKYCircularProgress3() {
-        let circularProgress3Frame = CGRectMake(CGRectGetWidth(circularProgress2.frame)*1.25, CGRectGetHeight(circularProgress1.frame)*1.15, CGRectGetWidth(self.view.frame)/2, CGRectGetHeight(self.view.frame)/2)
+        let circularProgress3Frame = CGRectMake(CGRectGetWidth(circularProgress2.frame)*1.25, CGRectGetHeight(circularProgress1.frame)*1.15, CGRectGetWidth(view.frame)/2, CGRectGetHeight(view.frame)/2)
         circularProgress3 = KYCircularProgress(frame: circularProgress3Frame)
         
         circularProgress3.colors = [UIColor.purpleColor(), UIColor(rgba: 0xFFF77A55), UIColor.orangeColor()]
@@ -76,7 +76,7 @@ class ViewController: UIViewController {
         path.closePath()
         circularProgress3.path = path
         
-        self.view.addSubview(circularProgress3)
+        view.addSubview(circularProgress3)
     }
     
     func updateProgress() {
