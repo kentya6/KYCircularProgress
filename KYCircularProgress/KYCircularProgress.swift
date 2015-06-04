@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 // MARK: - KYCircularProgress
-class KYCircularProgress: UIView {
-    typealias progressChangedHandler = (progress: Double, circularView: KYCircularProgress) -> ()
+public class KYCircularProgress: UIView {
+    public typealias progressChangedHandler = (progress: Double, circularView: KYCircularProgress) -> ()
     private var progressChangedClosure: progressChangedHandler?
     private var progressView: KYCircularShapeView!
     private var gradientLayer: CAGradientLayer!
@@ -19,7 +19,7 @@ class KYCircularProgress: UIView {
     private var guideLayer: CALayer?
     
     
-    var progress: Double = 0.0 {
+    public var progress: Double = 0.0 {
         didSet {
             let clipProgress = max( min(oldValue, Double(1.0)), Double(0.0))
             progressView.updateProgress(clipProgress)
@@ -28,70 +28,70 @@ class KYCircularProgress: UIView {
         }
     }
     
-    var startAngle: Double = 0.0 {
+    public var startAngle: Double = 0.0 {
         didSet {
             progressView.startAngle = oldValue
             progressGuideView?.startAngle = oldValue
         }
     }
     
-    var endAngle: Double = 0.0 {
+    public var endAngle: Double = 0.0 {
         didSet {
             progressView.endAngle = oldValue
             progressGuideView?.endAngle = oldValue
         }
     }
     
-    var lineWidth: Double = 8.0 {
+    public var lineWidth: Double = 8.0 {
         willSet {
             progressView.shapeLayer().lineWidth = CGFloat(newValue)
         }
     }
     
-    var guideLineWidth: Double = 8.0 {
+    public var guideLineWidth: Double = 8.0 {
         willSet {
             progressGuideView?.shapeLayer().lineWidth = CGFloat(newValue)
         }
     }
     
-    var path: UIBezierPath? {
+    public var path: UIBezierPath? {
         willSet {
             progressView.shapeLayer().path = newValue?.CGPath
             progressGuideView?.shapeLayer().path = newValue?.CGPath
         }
     }
     
-    var colors: [UIColor]? {
+    public var colors: [UIColor]? {
         willSet {
             updateColors(newValue)
         }
     }
     
-    var progressGuideColor: UIColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.2) {
+    public var progressGuideColor: UIColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.2) {
         willSet {
             guideLayer?.backgroundColor = newValue.CGColor
         }
     }
 
-    var showProgressGuide: Bool = false {
+    public var showProgressGuide: Bool = false {
         willSet {
             configureProgressGuideLayer(newValue)
         }
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configureProgressLayer()
         configureProgressGuideLayer(showProgressGuide)
     }
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         configureProgressLayer()
         configureProgressGuideLayer(showProgressGuide)
     }
     
-    init(frame: CGRect, showProgressGuide: Bool) {
+    public init(frame: CGRect, showProgressGuide: Bool) {
         super.init(frame: frame)
         configureProgressLayer()
         self.showProgressGuide = showProgressGuide
@@ -127,18 +127,18 @@ class KYCircularProgress: UIView {
             guideLayer!.mask = progressGuideView!.shapeLayer()
             guideLayer!.backgroundColor = progressGuideColor.CGColor
             guideLayer!.zPosition = -1
-            
+
             progressGuideView!.updateProgress(1.0)
             
             layer.addSublayer(guideLayer)
         }
     }
     
-    func progressChangedClosure(completion: progressChangedHandler) {
+    public func progressChangedClosure(completion: progressChangedHandler) {
         progressChangedClosure = completion
     }
     
-    private func updateColors(colors: [UIColor]?) -> () {    
+    private func updateColors(colors: [UIColor]?) -> () {
         var convertedColors: [CGColorRef] = []
         if let inputColors = colors {
             for color in inputColors {
