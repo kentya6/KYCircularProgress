@@ -20,7 +20,6 @@ Flexible progress bar written in Swift.
 
 ## ToDo
 1. Customizable on Storyboard
-2. Installation via CocoaPods
 3. Progress Change Animation
 
 ## Demo
@@ -71,7 +70,27 @@ path.closePath()
 circularProgress.path = path
 ```
 ## Installation
-1. Add `KYCircularProgress.swift` in your project.
+#### CocoaPods
+[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects.
+
+To integrate KYCircularProgress into your Xcode project using CocoaPods, specify it in your `podfile`:
+
+```
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
+
+pod 'KYCircularProgress'
+```
+
+Then, run the following command:
+
+```
+$ pod install
+```
+
+#### Manually
+Add `KYCircularProgress.swift` into your Xcode project.
 
 ## Licence
 
