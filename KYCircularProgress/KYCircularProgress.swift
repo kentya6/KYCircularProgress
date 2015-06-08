@@ -197,7 +197,7 @@ class KYCircularShapeView: UIView {
 
 // MARK: - UIColor Extension
 extension UIColor {
-    convenience init(rgba: Int64) {
+    convenience public init(rgba: Int64) {
         let red   = CGFloat((rgba & 0xFF000000) >> 24) / 255.0
         let green = CGFloat((rgba & 0x00FF0000) >> 16) / 255.0
         let blue  = CGFloat((rgba & 0x0000FF00) >> 8)  / 255.0
