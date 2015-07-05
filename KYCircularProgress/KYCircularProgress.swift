@@ -25,14 +25,40 @@ import UIKit
 
 // MARK: - KYCircularProgress
 public class KYCircularProgress: UIView {
+    
+    /**
+    Typealias of progressChangedClosure.
+    */
     public typealias progressChangedHandler = (progress: Double, circularView: KYCircularProgress) -> ()
+    
+    /**
+    This closure is called when set value to `progress` property.
+    */
     private var progressChangedClosure: progressChangedHandler?
+    
+    /**
+    Main progress view.
+    */
     private var progressView: KYCircularShapeView!
+    
+    /**
+    Gradient mask layer of `progressView`.
+    */
     private var gradientLayer: CAGradientLayer!
+    
+    /**
+    Guide view of `progressView`.
+    */
     private var progressGuideView: KYCircularShapeView?
+    
+    /**
+    Mask layer of `progressGuideView`.
+    */
     private var guideLayer: CALayer?
     
-    
+    /**
+    Current progress value. (0.0 - 1.0)
+    */
     @IBInspectable public var progress: Double = 0.0 {
         didSet {
             let clipProgress = max( min(oldValue, Double(1.0)), Double(0.0))
@@ -42,6 +68,9 @@ public class KYCircularProgress: UIView {
         }
     }
     
+    /**
+    Progress start angle.
+    */
     public var startAngle: Double = 0.0 {
         didSet {
             progressView.startAngle = oldValue
@@ -49,6 +78,9 @@ public class KYCircularProgress: UIView {
         }
     }
     
+    /**
+    Progress end angle.
+    */
     public var endAngle: Double = 0.0 {
         didSet {
             progressView.endAngle = oldValue
@@ -56,18 +88,27 @@ public class KYCircularProgress: UIView {
         }
     }
     
+    /**
+    Main progress line width.
+    */
     @IBInspectable public var lineWidth: Double = 8.0 {
         willSet {
             progressView.shapeLayer().lineWidth = CGFloat(newValue)
         }
     }
     
+    /**
+    Guide progress line width.
+    */
     @IBInspectable public var guideLineWidth: Double = 8.0 {
         willSet {
             progressGuideView?.shapeLayer().lineWidth = CGFloat(newValue)
         }
     }
     
+    /**
+    Progress bar path. You can create various type of progress bar.
+    */
     public var path: UIBezierPath? {
         willSet {
             progressView.shapeLayer().path = newValue?.CGPath
@@ -75,18 +116,27 @@ public class KYCircularProgress: UIView {
         }
     }
     
+    /**
+    Progress bar colors. You can set many colors in `colors` property, and it makes gradation color in `colors`.
+    */
     public var colors: [UIColor]? {
         willSet {
             updateColors(newValue)
         }
     }
     
+    /**
+    Progress guide bar color.
+    */
     @IBInspectable public var progressGuideColor: UIColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.2) {
         willSet {
             guideLayer?.backgroundColor = newValue.CGColor
         }
     }
 
+    /**
+    Switch of progress guide view. If you set to `true`, progress guide view is enabled.
+    */
     @IBInspectable public var showProgressGuide: Bool = false {
         willSet {
             configureProgressGuideLayer(newValue)
@@ -105,6 +155,12 @@ public class KYCircularProgress: UIView {
         configureProgressGuideLayer(showProgressGuide)
     }
     
+    /**
+    Create `KYCircularProgress` with progress guide.
+    
+    :param: frame `KYCircularProgress` frame.
+    :param: showProgressGuide If you set to `true`, progress guide view is enabled.
+    */
     public init(frame: CGRect, showProgressGuide: Bool) {
         super.init(frame: frame)
         configureProgressLayer()
@@ -116,6 +172,15 @@ public class KYCircularProgress: UIView {
         super.awakeFromNib()
         configureProgressLayer()
         configureProgressGuideLayer(self.showProgressGuide)
+    }
+    
+    /**
+    This closure is called when set value to `progress` property.
+    
+    :param: completion progress changed closure.
+    */
+    public func progressChangedClosure(completion: progressChangedHandler) {
+        progressChangedClosure = completion
     }
     
     private func configureProgressLayer() {
@@ -154,11 +219,7 @@ public class KYCircularProgress: UIView {
         }
     }
     
-    public func progressChangedClosure(completion: progressChangedHandler) {
-        progressChangedClosure = completion
-    }
-    
-    private func updateColors(colors: [UIColor]?) -> () {
+    private func updateColors(colors: [UIColor]?) {
         var convertedColors: [CGColorRef] = []
         if let inputColors = colors {
             for color in inputColors {
