@@ -44,7 +44,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="circularProgress4" destination="L7N-pS-OgH" id="GOR-7m-Ped"/>
+                        <outlet property="storyboardCircularProgress" destination="L7N-pS-OgH" id="Oiv-gF-Hd8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
