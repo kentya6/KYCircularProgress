@@ -35,10 +35,10 @@ Flexible progress bar written in Swift.
 #### Create KYCircularProgress
 ```swift
 // create KYCircularProgress
-var circularProgress: KYCircularProgress! = KYCircularProgress(frame: self.view.bounds)
+var circularProgress = KYCircularProgress(frame: self.view.bounds)
 
 // create KYCircularProgress with gauge guide
-var circularProgress: KYCircularProgress! = KYCircularProgress(frame: self.view.bounds, showProgressGuide: true)
+var circularProgress = KYCircularProgress(frame: self.view.bounds, showProgressGuide: true)
 ```
 
 #### Gradation Color
