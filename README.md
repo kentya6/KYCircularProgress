@@ -1,6 +1,7 @@
 KYCircularProgress
 ==================
 
+[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/KYCircularProgress.svg)](https://img.shields.io/cocoapods/v/KYCircularProgress.svg)
 [![Platform](http://img.shields.io/badge/platform-ios-blue.svg?style=flat
 )](https://developer.apple.com/iphone/index.action)
 [![Language](http://img.shields.io/badge/language-swift-brightgreen.svg?style=flat
@@ -17,10 +18,10 @@ Flexible progress bar written in Swift.
 - [x] Progress Closure
 - [x] UIBezierPath Progress Bar
 - [x] Progress Gauge Guide
+- [x] Customizable on Storyboard
 
 ## ToDo
-1. Customizable on Storyboard
-3. Progress Change Animation
+1. Progress Change Animation
 
 ## Demo
 <p align="center" >
@@ -28,8 +29,7 @@ Flexible progress bar written in Swift.
 </p>
 
 ## Requirement
-* iOS7.0+
-* Xcode6.3+
+- Swift1.2
 
 ## Usage
 #### Create KYCircularProgress
@@ -52,9 +52,10 @@ circularProgress.colors = [UIColor.purpleColor(), UIColor(rgba: 0xFFF77A55), UIC
 
 #### Progress Closure
 ```swift
-circularProgress.progressChangedClosure({ (progress: Double, circularView: KYCircularProgress) in
-	println("progress: \(progress)")
-})
+circularProgress.progressChangedClosure() {
+    (progress: Double, circularView: KYCircularProgress) in
+    println("progress: \(progress)")
+}
 ```
 
 #### UIBezierPath Progress Bar
@@ -69,6 +70,7 @@ path.addLineToPoint(CGPointMake(17.0, 86.0))
 path.closePath()
 circularProgress.path = path
 ```
+
 ## Installation
 #### CocoaPods
 [CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects.
@@ -96,7 +98,7 @@ Add `KYCircularProgress.swift` into your Xcode project.
 
 The MIT License (MIT)
 
-Copyright (c) 2014 Kengo YOKOYAMA
+Copyright (c) 2014-2015 Kengo YOKOYAMA
 
 ## Author
 
