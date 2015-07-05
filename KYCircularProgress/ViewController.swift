@@ -27,8 +27,8 @@ class ViewController: UIViewController {
     }
 
     private func configureHalfCircularProgress() {
-        let circularProgress1Frame = CGRectMake(0, 0, CGRectGetWidth(view.frame), CGRectGetHeight(view.frame)/2)
-        halfCircularProgress = KYCircularProgress(frame: circularProgress1Frame)
+        let halfCircularProgressFrame = CGRectMake(0, 0, CGRectGetWidth(view.frame), CGRectGetHeight(view.frame)/2)
+        halfCircularProgress = KYCircularProgress(frame: halfCircularProgressFrame)
         
         let center = CGPoint(x: 160.0, y: 200.0)
         halfCircularProgress.path = UIBezierPath(arcCenter: center, radius: CGFloat(CGRectGetWidth(halfCircularProgress.frame)/3), startAngle: CGFloat(M_PI), endAngle: CGFloat(0.0), clockwise: true)
@@ -53,8 +53,8 @@ class ViewController: UIViewController {
     }
     
     private func configureFourColorCircularProgress() {
-        let circularProgress2Frame = CGRectMake(0, CGRectGetHeight(halfCircularProgress.frame), CGRectGetWidth(view.frame)/2, CGRectGetHeight(view.frame)/3)
-        fourColorCircularProgress = KYCircularProgress(frame: circularProgress2Frame)
+        let fourColorCircularProgressFrame = CGRectMake(0, CGRectGetHeight(halfCircularProgress.frame), CGRectGetWidth(view.frame)/2, CGRectGetHeight(view.frame)/3)
+        fourColorCircularProgress = KYCircularProgress(frame: fourColorCircularProgressFrame)
         
         fourColorCircularProgress.colors = [UIColor(rgba: 0xA6E39D11), UIColor(rgba: 0xAEC1E355), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABFF)]
         
@@ -62,8 +62,8 @@ class ViewController: UIViewController {
     }
     
     private func configureStarProgress() {
-        let circularProgress3Frame = CGRectMake(CGRectGetWidth(fourColorCircularProgress.frame)*1.25, CGRectGetHeight(halfCircularProgress.frame)*1.15, CGRectGetWidth(view.frame)/2, CGRectGetHeight(view.frame)/2)
-        starProgress = KYCircularProgress(frame: circularProgress3Frame)
+        let starProgressFrame = CGRectMake(CGRectGetWidth(fourColorCircularProgress.frame)*1.25, CGRectGetHeight(halfCircularProgress.frame)*1.15, CGRectGetWidth(view.frame)/2, CGRectGetHeight(view.frame)/2)
+        starProgress = KYCircularProgress(frame: starProgressFrame)
         
         starProgress.colors = [UIColor.purpleColor(), UIColor(rgba: 0xFFF77A55), UIColor.orangeColor()]
         starProgress.lineWidth = 3.0
