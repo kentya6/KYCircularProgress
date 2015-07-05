@@ -43,11 +43,12 @@ class ViewController: UIViewController {
         textLabel.textColor = UIColor.greenColor()
         textLabel.alpha = 0.3
         halfCircularProgress.addSubview(textLabel)
-        
-        halfCircularProgress.progressChangedClosure({ (progress: Double, circularView: KYCircularProgress) in
+
+        halfCircularProgress.progressChangedClosure() {
+            (progress: Double, circularView: KYCircularProgress) in
             println("progress: \(progress)")
             textLabel.text = "\(Int(progress * 100.0))%"
-        })
+        }
         
         view.addSubview(halfCircularProgress)
     }
