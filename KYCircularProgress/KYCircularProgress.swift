@@ -29,7 +29,7 @@ public class KYCircularProgress: UIView {
     /**
     Typealias of progressChangedClosure.
     */
-    public typealias progressChangedHandler = (progress: Double, circularView: KYCircularProgress) -> ()
+    public typealias progressChangedHandler = (progress: Double, circularView: KYCircularProgress) -> Void
     
     /**
     This closure is called when set value to `progress` property.
@@ -61,7 +61,7 @@ public class KYCircularProgress: UIView {
     */
     @IBInspectable public var progress: Double = 0.0 {
         didSet {
-            let clipProgress = max( min(oldValue, Double(1.0)), Double(0.0))
+            let clipProgress = max( min(oldValue, Double(1.0)), Double(0.0) )
             progressView.updateProgress(clipProgress)
             
             progressChangedClosure?(progress: clipProgress, circularView: self)
@@ -221,8 +221,8 @@ public class KYCircularProgress: UIView {
     
     private func updateColors(colors: [UIColor]?) {
         var convertedColors: [CGColorRef] = []
-        if let inputColors = colors {
-            for color in inputColors {
+        if let colors = colors {
+            for color in colors {
                 convertedColors.append(color.CGColor)
             }
         } else {
