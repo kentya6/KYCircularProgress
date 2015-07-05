@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     var circularProgress2: KYCircularProgress!
     var circularProgress3: KYCircularProgress!
     var progress: UInt8 = 0
+    @IBOutlet private weak var circularProgress4: KYCircularProgress!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,5 +87,6 @@ class ViewController: UIViewController {
         circularProgress1.progress = normalizedProgress
         circularProgress2.progress = normalizedProgress
         circularProgress3.progress = normalizedProgress
+        circularProgress4.progress = normalizedProgress
     }
 }

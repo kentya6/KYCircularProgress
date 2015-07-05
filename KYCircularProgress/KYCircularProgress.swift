@@ -33,7 +33,7 @@ public class KYCircularProgress: UIView {
     private var guideLayer: CALayer?
     
     
-    public var progress: Double = 0.0 {
+    @IBInspectable public var progress: Double = 0.0 {
         didSet {
             let clipProgress = max( min(oldValue, Double(1.0)), Double(0.0))
             progressView.updateProgress(clipProgress)
@@ -56,13 +56,13 @@ public class KYCircularProgress: UIView {
         }
     }
     
-    public var lineWidth: Double = 8.0 {
+    @IBInspectable public var lineWidth: Double = 8.0 {
         willSet {
             progressView.shapeLayer().lineWidth = CGFloat(newValue)
         }
     }
     
-    public var guideLineWidth: Double = 8.0 {
+    @IBInspectable public var guideLineWidth: Double = 8.0 {
         willSet {
             progressGuideView?.shapeLayer().lineWidth = CGFloat(newValue)
         }
@@ -81,13 +81,13 @@ public class KYCircularProgress: UIView {
         }
     }
     
-    public var progressGuideColor: UIColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.2) {
+    @IBInspectable public var progressGuideColor: UIColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.2) {
         willSet {
             guideLayer?.backgroundColor = newValue.CGColor
         }
     }
 
-    public var showProgressGuide: Bool = false {
+    @IBInspectable public var showProgressGuide: Bool = false {
         willSet {
             configureProgressGuideLayer(newValue)
         }
@@ -112,6 +112,12 @@ public class KYCircularProgress: UIView {
         configureProgressGuideLayer(self.showProgressGuide)
     }
 
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        configureProgressLayer()
+        configureProgressGuideLayer(self.showProgressGuide)
+    }
+    
     private func configureProgressLayer() {
         progressView = KYCircularShapeView(frame: bounds)
         progressView.shapeLayer().fillColor = UIColor.clearColor().CGColor
