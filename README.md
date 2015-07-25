@@ -2,12 +2,13 @@ KYCircularProgress
 ==================
 
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/KYCircularProgress.svg)](https://img.shields.io/cocoapods/v/KYCircularProgress.svg)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat
+)](http://mit-license.org)
 [![Platform](http://img.shields.io/badge/platform-ios-blue.svg?style=flat
 )](https://developer.apple.com/iphone/index.action)
 [![Language](http://img.shields.io/badge/language-swift-brightgreen.svg?style=flat
 )](https://developer.apple.com/swift)
-[![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat
-)](http://mit-license.org)
 [![Issues](https://img.shields.io/github/issues/kentya6/KYCircularProgress.svg?style=flat
 )](https://github.com/kentya6/KYCircularProgress/issues?state=open)
 
@@ -89,6 +90,22 @@ Then, run the following command:
 
 ```
 $ pod install
+```
+
+####Carthage (iOS 8+)
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate KYCircularProgress into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "kentya6/KYCircularProgress" >= 0.3.0
 ```
 
 #### Manually
