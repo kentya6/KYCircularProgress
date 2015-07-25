@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KYCircularProgress
 
 class ViewController: UIViewController {
 
