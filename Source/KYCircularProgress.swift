@@ -179,6 +179,7 @@ public class KYCircularProgress: UIView {
         progressView = KYCircularShapeView(frame: bounds)
         progressView.shapeLayer().fillColor = UIColor.clearColor().CGColor
         progressView.shapeLayer().path = path?.CGPath
+        progressView.shapeLayer().lineWidth = CGFloat(lineWidth)
         progressView.shapeLayer().strokeColor = tintColor.CGColor
 
         gradientLayer = CAGradientLayer(layer: layer)
