@@ -60,7 +60,7 @@ public class KYCircularProgress: UIView {
     */
     @IBInspectable public var progress: Double = 0.0 {
         didSet {
-            let clipProgress = max( min(oldValue, Double(1.0)), Double(0.0) )
+            let clipProgress = max( min(progress, Double(1.0)), Double(0.0) )
             progressView.updateProgress(clipProgress)
             
             progressChangedClosure?(progress: clipProgress, circularView: self)
@@ -72,8 +72,8 @@ public class KYCircularProgress: UIView {
     */
     public var startAngle: Double = 0.0 {
         didSet {
-            progressView.startAngle = oldValue
-            progressGuideView?.startAngle = oldValue
+            progressView.startAngle = startAngle
+            progressGuideView?.startAngle = startAngle
         }
     }
     
@@ -82,8 +82,8 @@ public class KYCircularProgress: UIView {
     */
     public var endAngle: Double = 0.0 {
         didSet {
-            progressView.endAngle = oldValue
-            progressGuideView?.endAngle = oldValue
+            progressView.endAngle = endAngle
+            progressGuideView?.endAngle = endAngle
         }
     }
     
@@ -91,8 +91,8 @@ public class KYCircularProgress: UIView {
     Main progress line width.
     */
     @IBInspectable public var lineWidth: Double = 8.0 {
-        willSet {
-            progressView.shapeLayer().lineWidth = CGFloat(newValue)
+        didSet {
+            progressView.shapeLayer().lineWidth = CGFloat(lineWidth)
         }
     }
     
@@ -100,8 +100,8 @@ public class KYCircularProgress: UIView {
     Guide progress line width.
     */
     @IBInspectable public var guideLineWidth: Double = 8.0 {
-        willSet {
-            progressGuideView?.shapeLayer().lineWidth = CGFloat(newValue)
+        didSet {
+            progressGuideView?.shapeLayer().lineWidth = CGFloat(guideLineWidth)
         }
     }
     
@@ -109,9 +109,9 @@ public class KYCircularProgress: UIView {
     Progress bar path. You can create various type of progress bar.
     */
     public var path: UIBezierPath? {
-        willSet {
-            progressView.shapeLayer().path = newValue?.CGPath
-            progressGuideView?.shapeLayer().path = newValue?.CGPath
+        didSet {
+            progressView.shapeLayer().path = path?.CGPath
+            progressGuideView?.shapeLayer().path = path?.CGPath
         }
     }
     
@@ -119,8 +119,8 @@ public class KYCircularProgress: UIView {
     Progress bar colors. You can set many colors in `colors` property, and it makes gradation color in `colors`.
     */
     public var colors: [UIColor]? {
-        willSet {
-            updateColors(newValue)
+        didSet {
+            updateColors(colors)
         }
     }
     
@@ -128,8 +128,8 @@ public class KYCircularProgress: UIView {
     Progress guide bar color.
     */
     @IBInspectable public var progressGuideColor: UIColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.2) {
-        willSet {
-            guideLayer?.backgroundColor = newValue.CGColor
+        didSet {
+            guideLayer?.backgroundColor = progressGuideColor.CGColor
         }
     }
 
@@ -137,8 +137,8 @@ public class KYCircularProgress: UIView {
     Switch of progress guide view. If you set to `true`, progress guide view is enabled.
     */
     @IBInspectable public var showProgressGuide: Bool = false {
-        willSet {
-            configureProgressGuideLayer(newValue)
+        didSet {
+            configureProgressGuideLayer(showProgressGuide)
         }
     }
     
