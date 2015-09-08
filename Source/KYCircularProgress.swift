@@ -184,9 +184,9 @@ public class KYCircularProgress: UIView {
 
         gradientLayer = CAGradientLayer(layer: layer)
         gradientLayer.frame = progressView.frame
-        gradientLayer.startPoint = CGPointMake(0, 0.5);
-        gradientLayer.endPoint = CGPointMake(1, 0.5);
-        gradientLayer.mask = progressView.shapeLayer();
+        gradientLayer.startPoint = CGPointMake(0, 0.5)
+        gradientLayer.endPoint = CGPointMake(1, 0.5)
+        gradientLayer.mask = progressView.shapeLayer()
         gradientLayer.colors = colors ?? [UIColor(rgba: 0x9ACDE755).CGColor, UIColor(rgba: 0xE7A5C955).CGColor]
         
         layer.addSublayer(gradientLayer)
