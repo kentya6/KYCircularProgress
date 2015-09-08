@@ -202,8 +202,8 @@ public class KYCircularProgress: UIView {
         if showProgressGuide && progressGuideView == nil {
             progressGuideView = KYCircularShapeView(frame: bounds)
             progressGuideView!.shapeLayer().fillColor = UIColor.clearColor().CGColor
-            progressGuideView!.shapeLayer().path = path?.CGPath
-            progressGuideView!.shapeLayer().lineWidth = CGFloat(lineWidth)
+            progressGuideView!.shapeLayer().path = progressView.shapeLayer().path
+            progressGuideView!.shapeLayer().lineWidth = CGFloat(guideLineWidth)
             progressGuideView!.shapeLayer().strokeColor = tintColor.CGColor
 
             guideLayer = CAGradientLayer(layer: layer)
