@@ -138,6 +138,8 @@ public class KYCircularProgress: UIView {
     */
     @IBInspectable public var showProgressGuide: Bool = false {
         didSet {
+            setNeedsLayout()
+            layoutIfNeeded()
             configureProgressGuideLayer(showProgressGuide)
         }
     }
@@ -145,13 +147,11 @@ public class KYCircularProgress: UIView {
     required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configureProgressLayer()
-        configureProgressGuideLayer(showProgressGuide)
     }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
         configureProgressLayer()
-        configureProgressGuideLayer(showProgressGuide)
     }
     
     /**
@@ -164,7 +164,6 @@ public class KYCircularProgress: UIView {
         super.init(frame: frame)
         configureProgressLayer()
         self.showProgressGuide = showProgressGuide
-        configureProgressGuideLayer(self.showProgressGuide)
     }
     
     /**
