@@ -218,6 +218,9 @@ public class KYCircularProgress: UIView {
             for color in colors {
                 convertedColors.append(color.CGColor)
             }
+            if convertedColors.count == 1 {
+                convertedColors.append(convertedColors.first!)
+            }
         } else {
             convertedColors = [UIColor(rgba: 0x9ACDE7FF).CGColor, UIColor(rgba: 0xE7A5C9FF).CGColor]
         }
