@@ -166,12 +166,6 @@ public class KYCircularProgress: UIView {
         self.showProgressGuide = showProgressGuide
         configureProgressGuideLayer(self.showProgressGuide)
     }
-
-    public override func awakeFromNib() {
-        super.awakeFromNib()
-        configureProgressLayer()
-        configureProgressGuideLayer(self.showProgressGuide)
-    }
     
     /**
     This closure is called when set value to `progress` property.
