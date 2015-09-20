@@ -47,7 +47,7 @@ class ViewController: UIViewController {
 
         halfCircularProgress.progressChangedClosure() {
             (progress: Double, circularView: KYCircularProgress) in
-            println("progress: \(progress)")
+            print("progress: \(progress)")
             textLabel.text = "\(Int(progress * 100.0))%"
         }
         

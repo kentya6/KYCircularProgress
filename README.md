@@ -30,7 +30,7 @@ Flexible progress bar written in Swift.
 </p>
 
 ## Requirement
-- Swift1.2
+- Swift2
 
 ## Usage
 #### Create KYCircularProgress
@@ -55,7 +55,7 @@ circularProgress.colors = [UIColor.purpleColor(), UIColor(rgba: 0xFFF77A55), UIC
 ```swift
 circularProgress.progressChangedClosure() {
     (progress: Double, circularView: KYCircularProgress) in
-    println("progress: \(progress)")
+    print("progress: \(progress)")
 }
 ```
 
@@ -105,7 +105,7 @@ $ brew install carthage
 To integrate KYCircularProgress into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "kentya6/KYCircularProgress" >= 0.4.0
+github "kentya6/KYCircularProgress" >= 0.5.0
 ```
 
 #### Manually

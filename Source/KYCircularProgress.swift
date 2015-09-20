@@ -144,7 +144,7 @@ public class KYCircularProgress: UIView {
         }
     }
     
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configureProgressLayer()
     }
@@ -208,7 +208,7 @@ public class KYCircularProgress: UIView {
 
             progressGuideView!.updateProgress(1.0)
             
-            layer.addSublayer(guideLayer)
+            layer.addSublayer(guideLayer!)
         }
     }
     
@@ -241,7 +241,7 @@ class KYCircularShapeView: UIView {
         return layer as! CAShapeLayer
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
