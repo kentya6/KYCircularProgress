@@ -9,8 +9,8 @@ KYCircularProgress
 )](https://developer.apple.com/iphone/index.action)
 [![Language](http://img.shields.io/badge/language-swift-brightgreen.svg?style=flat
 )](https://developer.apple.com/swift)
-[![Issues](https://img.shields.io/github/issues/kentya6/KYCircularProgress.svg?style=flat
-)](https://github.com/kentya6/KYCircularProgress/issues?state=open)
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/kentya6/KYCircularProgress.svg)](http://isitmaintained.com/project/kentya6/KYCircularProgress "Percentage of issues still open")
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/kentya6/KYCircularProgress.svg)](http://isitmaintained.com/project/kentya6/KYCircularProgress "Average time to resolve an issue")
 
 Flexible progress bar written in Swift.
 
