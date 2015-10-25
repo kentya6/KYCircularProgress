@@ -163,7 +163,7 @@ public class KYCircularProgress: UIView {
     public init(frame: CGRect, showProgressGuide: Bool) {
         super.init(frame: frame)
         configureProgressLayer()
-        self.showProgressGuide = showProgressGuide
+        configureProgressGuideLayer(showProgressGuide)
     }
     
     /**

@@ -29,13 +29,12 @@ class ViewController: UIViewController {
 
     private func configureHalfCircularProgress() {
         let halfCircularProgressFrame = CGRectMake(0, 0, CGRectGetWidth(view.frame), CGRectGetHeight(view.frame)/2)
-        halfCircularProgress = KYCircularProgress(frame: halfCircularProgressFrame)
+        halfCircularProgress = KYCircularProgress(frame: halfCircularProgressFrame, showProgressGuide: true)
         
         let center = CGPoint(x: 160.0, y: 200.0)
         halfCircularProgress.path = UIBezierPath(arcCenter: center, radius: CGFloat(CGRectGetWidth(halfCircularProgress.frame)/3), startAngle: CGFloat(M_PI), endAngle: CGFloat(0.0), clockwise: true)
         halfCircularProgress.colors = [UIColor(rgba: 0xA6E39DAA), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABAA)]
         halfCircularProgress.lineWidth = 8.0
-        halfCircularProgress.showProgressGuide = true
         halfCircularProgress.progressGuideColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.4)
         
         let textLabel = UILabel(frame: CGRectMake(halfCircularProgress.frame.origin.x + 120.0, 170.0, 80.0, 32.0))
