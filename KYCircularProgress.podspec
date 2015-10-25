@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "KYCircularProgress"
-  s.version      = "0.5.0"
+  s.version      = "0.5.1"
   s.summary      = "Flexible progress bar written in Swift."
   s.homepage     = "https://github.com/kentya6/KYCircularProgress"
   s.license      = "MIT"
