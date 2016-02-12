@@ -1,7 +1,7 @@
 KYCircularProgress
 ==================
 
-[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/KYCircularProgress.svg)](https://img.shields.io/cocoapods/v/KYCircularProgress.svg)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/KYCircularProgress.svg)](https://img.shields.io/cocoapods/v/KYCircularProgress.svg)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat
 )](http://mit-license.org)
