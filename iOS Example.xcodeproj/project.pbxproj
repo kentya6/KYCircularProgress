@@ -15,25 +15,7 @@
 		BE5E149319DCFF2500B261B1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE5E149119DCFF2500B261B1 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		BE06ECB21B6369F3009A1999 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BE06ECAD1B6369F3009A1999 /* KYCircularProgress.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BE06EC8B1B63617B009A1999;
-			remoteInfo = KYCircularProgress;
-		};
-		BE06ECB41B6369F3009A1999 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BE06ECAD1B6369F3009A1999 /* KYCircularProgress.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BE06EC961B63617B009A1999;
-			remoteInfo = KYCircularProgressTests;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		BE06ECAD1B6369F3009A1999 /* KYCircularProgress.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = KYCircularProgress.xcodeproj; sourceTree = "<group>"; };
 		BE1EE24E19E02488004074AA /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		BE5E148319DCFF2500B261B1 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5E148719DCFF2500B261B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,21 +37,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BE06ECAE1B6369F3009A1999 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				BE06ECB31B6369F3009A1999 /* KYCircularProgress.framework */,
-				BE06ECB51B6369F3009A1999 /* KYCircularProgressTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		BE5E147A19DCFF2500B261B1 = {
 			isa = PBXGroup;
 			children = (
 				BE5E148519DCFF2500B261B1 /* Source */,
 				BE5E148419DCFF2500B261B1 /* Products */,
-				BE06ECAD1B6369F3009A1999 /* KYCircularProgress.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,11 +102,13 @@
 		BE5E147B19DCFF2500B261B1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Kengo Yokoyama";
 				TargetAttributes = {
 					BE5E148219DCFF2500B261B1 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = QZJ74E9669;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -149,35 +123,12 @@
 			mainGroup = BE5E147A19DCFF2500B261B1;
 			productRefGroup = BE5E148419DCFF2500B261B1 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = BE06ECAE1B6369F3009A1999 /* Products */;
-					ProjectRef = BE06ECAD1B6369F3009A1999 /* KYCircularProgress.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				BE5E148219DCFF2500B261B1 /* iOS Example */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		BE06ECB31B6369F3009A1999 /* KYCircularProgress.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = KYCircularProgress.framework;
-			remoteRef = BE06ECB21B6369F3009A1999 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		BE06ECB51B6369F3009A1999 /* KYCircularProgressTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = KYCircularProgressTests.xctest;
-			remoteRef = BE06ECB41B6369F3009A1999 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BE5E148119DCFF2500B261B1 /* Resources */ = {
@@ -238,8 +189,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -248,6 +201,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -282,8 +236,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -291,6 +247,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = fast;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -301,6 +258,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -310,6 +268,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QZJ74E9669;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/KYCircularProgress-gjippbvmjapmhudfezxxpseouvlq/Build/Products/Debug-iphoneos",
@@ -318,6 +277,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "AppKnop.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "iOS Example";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -325,6 +285,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QZJ74E9669;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/KYCircularProgress-gjippbvmjapmhudfezxxpseouvlq/Build/Products/Debug-iphoneos",
@@ -333,6 +294,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "AppKnop.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "iOS Example";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

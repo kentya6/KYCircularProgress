@@ -11,11 +11,11 @@ import KYCircularProgress
 
 class ViewController: UIViewController {
 
-    private var halfCircularProgress: KYCircularProgress!
-    private var fourColorCircularProgress: KYCircularProgress!
-    private var starProgress: KYCircularProgress!
-    private var progress: UInt8 = 0
-    @IBOutlet private weak var storyboardCircularProgress: KYCircularProgress!
+    fileprivate var halfCircularProgress: KYCircularProgress!
+    fileprivate var fourColorCircularProgress: KYCircularProgress!
+    fileprivate var starProgress: KYCircularProgress!
+    fileprivate var progress: UInt8 = 0
+    @IBOutlet fileprivate weak var storyboardCircularProgress: KYCircularProgress!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,23 +24,23 @@ class ViewController: UIViewController {
         configureFourColorCircularProgress()
         configureStarProgress()
         
-        NSTimer.scheduledTimerWithTimeInterval(0.03, target: self, selector: Selector("updateProgress"), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 0.03, target: self, selector: #selector(ViewController.updateProgress), userInfo: nil, repeats: true)
     }
 
-    private func configureHalfCircularProgress() {
-        let halfCircularProgressFrame = CGRectMake(0, 0, CGRectGetWidth(view.frame), CGRectGetHeight(view.frame)/2)
+    fileprivate func configureHalfCircularProgress() {
+        let halfCircularProgressFrame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height/2)
         halfCircularProgress = KYCircularProgress(frame: halfCircularProgressFrame, showProgressGuide: true)
         
         let center = CGPoint(x: 160.0, y: 200.0)
-        halfCircularProgress.path = UIBezierPath(arcCenter: center, radius: CGFloat(CGRectGetWidth(halfCircularProgress.frame)/3), startAngle: CGFloat(M_PI), endAngle: CGFloat(0.0), clockwise: true)
+        halfCircularProgress.path = UIBezierPath(arcCenter: center, radius: CGFloat((halfCircularProgress.frame).width/3), startAngle: CGFloat(M_PI), endAngle: CGFloat(0.0), clockwise: true)
         halfCircularProgress.colors = [UIColor(rgba: 0xA6E39DAA), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABAA)]
         halfCircularProgress.lineWidth = 8.0
         halfCircularProgress.progressGuideColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.4)
         
-        let textLabel = UILabel(frame: CGRectMake(halfCircularProgress.frame.origin.x + 120.0, 170.0, 80.0, 32.0))
+        let textLabel = UILabel(frame: CGRect(x: halfCircularProgress.frame.origin.x + 120.0, y: 170.0, width: 80.0, height: 32.0))
         textLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 32)
-        textLabel.textAlignment = .Center
-        textLabel.textColor = UIColor.greenColor()
+        textLabel.textAlignment = .center
+        textLabel.textColor = UIColor.green
         textLabel.alpha = 0.3
         halfCircularProgress.addSubview(textLabel)
 
@@ -53,8 +53,8 @@ class ViewController: UIViewController {
         view.addSubview(halfCircularProgress)
     }
     
-    private func configureFourColorCircularProgress() {
-        let fourColorCircularProgressFrame = CGRectMake(0, CGRectGetHeight(halfCircularProgress.frame), CGRectGetWidth(view.frame)/2, CGRectGetHeight(view.frame)/3)
+    fileprivate func configureFourColorCircularProgress() {
+        let fourColorCircularProgressFrame = CGRect(x: 0, y: (halfCircularProgress.frame).height, width: (view.frame).width/2, height: (view.frame).height/3)
         fourColorCircularProgress = KYCircularProgress(frame: fourColorCircularProgressFrame)
         
         fourColorCircularProgress.colors = [UIColor(rgba: 0xA6E39D11), UIColor(rgba: 0xAEC1E355), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABFF)]
@@ -62,20 +62,20 @@ class ViewController: UIViewController {
         view.addSubview(fourColorCircularProgress)
     }
     
-    private func configureStarProgress() {
-        let starProgressFrame = CGRectMake(CGRectGetWidth(fourColorCircularProgress.frame)*1.25, CGRectGetHeight(halfCircularProgress.frame)*1.15, CGRectGetWidth(view.frame)/2, CGRectGetHeight(view.frame)/2)
+    fileprivate func configureStarProgress() {
+        let starProgressFrame = CGRect(x: (fourColorCircularProgress.frame).width*1.25, y: (halfCircularProgress.frame).height*1.15, width: (view.frame).width/2, height: (view.frame).height/2)
         starProgress = KYCircularProgress(frame: starProgressFrame)
         
-        starProgress.colors = [UIColor.purpleColor(), UIColor(rgba: 0xFFF77A55), UIColor.orangeColor()]
+        starProgress.colors = [UIColor.purple, UIColor(rgba: 0xFFF77A55), UIColor.orange]
         starProgress.lineWidth = 3.0
         
         let path = UIBezierPath()
-        path.moveToPoint(CGPointMake(50.0, 2.0))
-        path.addLineToPoint(CGPointMake(84.0, 86.0))
-        path.addLineToPoint(CGPointMake(6.0, 33.0))
-        path.addLineToPoint(CGPointMake(96.0, 33.0))
-        path.addLineToPoint(CGPointMake(17.0, 86.0))
-        path.closePath()
+        path.move(to: CGPoint(x: 50.0, y: 2.0))
+        path.addLine(to: CGPoint(x: 84.0, y: 86.0))
+        path.addLine(to: CGPoint(x: 6.0, y: 33.0))
+        path.addLine(to: CGPoint(x: 96.0, y: 33.0))
+        path.addLine(to: CGPoint(x: 17.0, y: 86.0))
+        path.close()
         starProgress.path = path
         
         view.addSubview(starProgress)

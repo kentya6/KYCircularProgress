@@ -30,16 +30,16 @@ Flexible progress bar written in Swift.
 </p>
 
 ## Requirement
-- Swift2
+- Swift3
 
 ## Usage
 #### Create KYCircularProgress
 ```swift
 // create KYCircularProgress
-var circularProgress = KYCircularProgress(frame: self.view.bounds)
+let circularProgress = KYCircularProgress(frame: view.bounds)
 
 // create KYCircularProgress with gauge guide
-var circularProgress = KYCircularProgress(frame: self.view.bounds, showProgressGuide: true)
+let circularProgress = KYCircularProgress(frame: view.bounds, showProgressGuide: true)
 ```
 
 #### Gradation Color
@@ -48,7 +48,7 @@ var circularProgress = KYCircularProgress(frame: self.view.bounds, showProgressG
 circularProgress.colors = [UIColor(rgba: 0xA6E39D11), UIColor(rgba: 0xAEC1E355), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABFF)]
 
 // combine Hex color and UIColor
-circularProgress.colors = [UIColor.purpleColor(), UIColor(rgba: 0xFFF77A55), UIColor.orangeColor()]
+circularProgress.colors = [UIColor.purple, UIColor(rgba: 0xFFF77A55), UIColor.orange]
 ```
 
 #### Progress Closure
@@ -63,13 +63,13 @@ circularProgress.progressChangedClosure() {
 ```swift
 // create "Star progress bar"
 let path = UIBezierPath()
-path.moveToPoint(CGPointMake(50.0, 2.0))
-path.addLineToPoint(CGPointMake(84.0, 86.0))
-path.addLineToPoint(CGPointMake(6.0, 33.0))
-path.addLineToPoint(CGPointMake(96.0, 33.0))
-path.addLineToPoint(CGPointMake(17.0, 86.0))
-path.closePath()
-circularProgress.path = path
+path.move(to: CGPoint(x: 50.0, y: 2.0))
+path.addLine(to: CGPoint(x: 84.0, y: 86.0))
+path.addLine(to: CGPoint(x: 6.0, y: 33.0))
+path.addLine(to: CGPoint(x: 96.0, y: 33.0))
+path.addLine(to: CGPoint(x: 17.0, y: 86.0))
+path.close()
+starProgress.path = path
 ```
 
 ## Installation
@@ -105,7 +105,7 @@ $ brew install carthage
 To integrate KYCircularProgress into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "kentya6/KYCircularProgress" >= 0.5.1
+github "kentya6/KYCircularProgress" >= 0.6.0
 ```
 
 #### Manually
@@ -115,7 +115,7 @@ Add `KYCircularProgress.swift` into your Xcode project.
 
 The MIT License (MIT)
 
-Copyright (c) 2014-2015 Kengo YOKOYAMA
+Copyright (c) 2014-2016 Kengo YOKOYAMA
 
 ## Author
 

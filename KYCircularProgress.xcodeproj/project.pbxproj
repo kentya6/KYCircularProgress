@@ -8,28 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		BE06EC911B63617B009A1999 /* KYCircularProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = BE06EC901B63617B009A1999 /* KYCircularProgress.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BE06EC971B63617B009A1999 /* KYCircularProgress.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE06EC8B1B63617B009A1999 /* KYCircularProgress.framework */; };
-		BE06EC9E1B63617B009A1999 /* KYCircularProgressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE06EC9D1B63617B009A1999 /* KYCircularProgressTests.swift */; };
 		BE06ECA81B636312009A1999 /* KYCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE06ECA71B636312009A1999 /* KYCircularProgress.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		BE06EC981B63617B009A1999 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BE06EC821B63617B009A1999 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BE06EC8A1B63617B009A1999;
-			remoteInfo = KYCircularProgress;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		BE06EC8B1B63617B009A1999 /* KYCircularProgress.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KYCircularProgress.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE06EC8F1B63617B009A1999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE06EC901B63617B009A1999 /* KYCircularProgress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KYCircularProgress.h; sourceTree = "<group>"; };
-		BE06EC961B63617B009A1999 /* KYCircularProgressTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KYCircularProgressTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE06EC9C1B63617B009A1999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE06EC9D1B63617B009A1999 /* KYCircularProgressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYCircularProgressTests.swift; sourceTree = "<group>"; };
 		BE06ECA71B636312009A1999 /* KYCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCircularProgress.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,14 +26,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BE06EC931B63617B009A1999 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BE06EC971B63617B009A1999 /* KYCircularProgress.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -56,7 +33,6 @@
 			isa = PBXGroup;
 			children = (
 				BE06EC8D1B63617B009A1999 /* Source */,
-				BE06EC9A1B63617B009A1999 /* Tests */,
 				BE06EC8C1B63617B009A1999 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,7 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				BE06EC8B1B63617B009A1999 /* KYCircularProgress.framework */,
-				BE06EC961B63617B009A1999 /* KYCircularProgressTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,23 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				BE06EC8F1B63617B009A1999 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		BE06EC9A1B63617B009A1999 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				BE06EC9D1B63617B009A1999 /* KYCircularProgressTests.swift */,
-				BE06EC9B1B63617B009A1999 /* Supporting Files */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		BE06EC9B1B63617B009A1999 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				BE06EC9C1B63617B009A1999 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -137,38 +95,20 @@
 			productReference = BE06EC8B1B63617B009A1999 /* KYCircularProgress.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		BE06EC951B63617B009A1999 /* KYCircularProgressTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BE06ECA41B63617B009A1999 /* Build configuration list for PBXNativeTarget "KYCircularProgressTests" */;
-			buildPhases = (
-				BE06EC921B63617B009A1999 /* Sources */,
-				BE06EC931B63617B009A1999 /* Frameworks */,
-				BE06EC941B63617B009A1999 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BE06EC991B63617B009A1999 /* PBXTargetDependency */,
-			);
-			name = KYCircularProgressTests;
-			productName = KYCircularProgressTests;
-			productReference = BE06EC961B63617B009A1999 /* KYCircularProgressTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		BE06EC821B63617B009A1999 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Kengo Yokoyama";
 				TargetAttributes = {
 					BE06EC8A1B63617B009A1999 = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					BE06EC951B63617B009A1999 = {
-						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -185,20 +125,12 @@
 			projectRoot = "";
 			targets = (
 				BE06EC8A1B63617B009A1999 /* KYCircularProgress */,
-				BE06EC951B63617B009A1999 /* KYCircularProgressTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BE06EC891B63617B009A1999 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BE06EC941B63617B009A1999 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -216,23 +148,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BE06EC921B63617B009A1999 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BE06EC9E1B63617B009A1999 /* KYCircularProgressTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		BE06EC991B63617B009A1999 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BE06EC8A1B63617B009A1999 /* KYCircularProgress */;
-			targetProxy = BE06EC981B63617B009A1999 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		BE06EC9F1B63617B009A1999 /* Debug */ = {
@@ -248,8 +164,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -257,6 +175,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -296,8 +215,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -317,6 +238,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -328,6 +250,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -335,9 +258,11 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "appknop.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -345,6 +270,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -352,38 +278,10 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "appknop.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		BE06ECA51B63617B009A1999 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		BE06ECA61B63617B009A1999 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -404,15 +302,6 @@
 			buildConfigurations = (
 				BE06ECA21B63617B009A1999 /* Debug */,
 				BE06ECA31B63617B009A1999 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BE06ECA41B63617B009A1999 /* Build configuration list for PBXNativeTarget "KYCircularProgressTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BE06ECA51B63617B009A1999 /* Debug */,
-				BE06ECA61B63617B009A1999 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
