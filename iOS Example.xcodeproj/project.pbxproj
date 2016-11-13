@@ -7,16 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE1EE24F19E02488004074AA /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE1EE24E19E02488004074AA /* background.jpg */; };
 		BE5E148919DCFF2500B261B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5E148819DCFF2500B261B1 /* AppDelegate.swift */; };
 		BE5E148B19DCFF2500B261B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5E148A19DCFF2500B261B1 /* ViewController.swift */; };
 		BE5E148E19DCFF2500B261B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5E148C19DCFF2500B261B1 /* Main.storyboard */; };
 		BE5E149019DCFF2500B261B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE5E148F19DCFF2500B261B1 /* Images.xcassets */; };
 		BE5E149319DCFF2500B261B1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE5E149119DCFF2500B261B1 /* LaunchScreen.xib */; };
+		BE8298661DD84962000E9FDF /* KYCircularProgress.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8298651DD84962000E9FDF /* KYCircularProgress.framework */; };
+		BE8298671DD84962000E9FDF /* KYCircularProgress.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE8298651DD84962000E9FDF /* KYCircularProgress.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		BE8298681DD84962000E9FDF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BE8298671DD84962000E9FDF /* KYCircularProgress.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		BE1EE24E19E02488004074AA /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		BE5E148319DCFF2500B261B1 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5E148719DCFF2500B261B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE5E148819DCFF2500B261B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +38,7 @@
 		BE5E148D19DCFF2500B261B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE5E148F19DCFF2500B261B1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BE5E149219DCFF2500B261B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		BE8298651DD84962000E9FDF /* KYCircularProgress.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KYCircularProgress.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE8298661DD84962000E9FDF /* KYCircularProgress.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +56,7 @@
 		BE5E147A19DCFF2500B261B1 = {
 			isa = PBXGroup;
 			children = (
+				BE8298651DD84962000E9FDF /* KYCircularProgress.framework */,
 				BE5E148519DCFF2500B261B1 /* Source */,
 				BE5E148419DCFF2500B261B1 /* Products */,
 			);
@@ -71,7 +88,6 @@
 				BE5E148C19DCFF2500B261B1 /* Main.storyboard */,
 				BE5E148F19DCFF2500B261B1 /* Images.xcassets */,
 				BE5E149119DCFF2500B261B1 /* LaunchScreen.xib */,
-				BE1EE24E19E02488004074AA /* background.jpg */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -86,6 +102,7 @@
 				BE5E147F19DCFF2500B261B1 /* Sources */,
 				BE5E148019DCFF2500B261B1 /* Frameworks */,
 				BE5E148119DCFF2500B261B1 /* Resources */,
+				BE8298681DD84962000E9FDF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,7 +153,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE5E148E19DCFF2500B261B1 /* Main.storyboard in Resources */,
-				BE1EE24F19E02488004074AA /* background.jpg in Resources */,
 				BE5E149319DCFF2500B261B1 /* LaunchScreen.xib in Resources */,
 				BE5E149019DCFF2500B261B1 /* Images.xcassets in Resources */,
 			);

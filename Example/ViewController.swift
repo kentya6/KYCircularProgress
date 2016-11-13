@@ -44,8 +44,8 @@ class ViewController: UIViewController {
         textLabel.alpha = 0.3
         halfCircularProgress.addSubview(textLabel)
 
-        halfCircularProgress.progressChangedClosure() {
-            (progress: Double, circularView: KYCircularProgress) in
+        halfCircularProgress.progressChanged {
+            (progress: Double, circularProgress: KYCircularProgress) in
             print("progress: \(progress)")
             textLabel.text = "\(Int(progress * 100.0))%"
         }
@@ -56,7 +56,6 @@ class ViewController: UIViewController {
     fileprivate func configureFourColorCircularProgress() {
         let fourColorCircularProgressFrame = CGRect(x: 0, y: (halfCircularProgress.frame).height, width: (view.frame).width/2, height: (view.frame).height/3)
         fourColorCircularProgress = KYCircularProgress(frame: fourColorCircularProgressFrame)
-        
         fourColorCircularProgress.colors = [UIColor(rgba: 0xA6E39D11), UIColor(rgba: 0xAEC1E355), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABFF)]
         
         view.addSubview(fourColorCircularProgress)
