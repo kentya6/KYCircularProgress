@@ -42,8 +42,9 @@ open class KYCircularProgress: UIView {
     fileprivate lazy var progressView: KYCircularShapeView = {
         let progressView = KYCircularShapeView(frame: self.bounds)
         progressView.shapeLayer.fillColor = UIColor.clear.cgColor
-        progressView.shapeLayer.path = self.path?.cgPath
         progressView.shapeLayer.lineWidth = CGFloat(self.lineWidth)
+        progressView.radius = self.radius
+        progressView.shapeLayer.path = self.path?.cgPath
         progressView.shapeLayer.strokeColor = self.tintColor.cgColor
         return progressView
     }()
@@ -68,8 +69,10 @@ open class KYCircularProgress: UIView {
     fileprivate lazy var progressGuideView: KYCircularShapeView = {
         let progressGuideView = KYCircularShapeView(frame: self.bounds)
         progressGuideView.shapeLayer.fillColor = UIColor.clear.cgColor
-        progressGuideView.shapeLayer.path = self.progressView.shapeLayer.path
         progressGuideView.shapeLayer.lineWidth = CGFloat(self.guideLineWidth)
+        progressGuideView.radius = self.radius
+        self.progressView.radius = self.radius
+        progressGuideView.shapeLayer.path = self.progressView.shapeLayer.path
         progressGuideView.shapeLayer.strokeColor = self.tintColor.cgColor
         progressGuideView.update(progress: 1.0)
         return progressGuideView
@@ -174,6 +177,8 @@ open class KYCircularProgress: UIView {
             progressGuideView.isHidden = !showProgressGuide
             guideLayer.backgroundColor = showProgressGuide ? progressGuideColor.cgColor : UIColor.clear.cgColor
         }
+    private var radius: Double {
+        return lineWidth >= guideLineWidth ? lineWidth : guideLineWidth
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -190,12 +195,6 @@ open class KYCircularProgress: UIView {
         
         setNeedsLayout()
         layoutIfNeeded()
-    }
-    
-    open override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        progressGuideView.shapeLayer.path = progressView.shapeLayer.path
     }
     
     /**
@@ -238,6 +237,7 @@ open class KYCircularProgress: UIView {
 class KYCircularShapeView: UIView {
     var startAngle = 0.0
     var endAngle = 0.0
+    var radius = 0.0
     
     override class var layerClass : AnyClass {
         return CAShapeLayer.self
@@ -268,7 +268,7 @@ class KYCircularShapeView: UIView {
     
     private func layoutPath() -> UIBezierPath {
         let halfWidth = CGFloat(frame.width / 2.0)
-        return UIBezierPath(arcCenter: CGPoint(x: halfWidth, y: halfWidth), radius: halfWidth - shapeLayer.lineWidth, startAngle: CGFloat(startAngle), endAngle: CGFloat(endAngle), clockwise: true)
+        return UIBezierPath(arcCenter: CGPoint(x: halfWidth, y: halfWidth), radius: (frame.width - CGFloat(radius)) / 2, startAngle: CGFloat(startAngle), endAngle: CGFloat(endAngle), clockwise: true)
     }
     
     fileprivate func update(progress: Double) {
