@@ -20,13 +20,11 @@ Flexible progress bar written in Swift.
 - [x] UIBezierPath Progress Bar
 - [x] Progress Gauge Guide
 - [x] Customizable on Storyboard
-
-## ToDo
-1. Progress Change Animation
+- [x] Progress Change Animation
 
 ## Demo
 <p align="center" >
-<img src="https://raw.githubusercontent.com/kentya6/KYCircularProgress/gh-pages/demo.gif" width="232" height="418"/>
+<img src="https://raw.githubusercontent.com/kentya6/KYCircularProgress/gh-pages/demo.gif" width="270" height="480"/>
 </p>
 
 ## Requirement
@@ -39,7 +37,7 @@ Flexible progress bar written in Swift.
 let circularProgress = KYCircularProgress(frame: view.bounds)
 
 // create KYCircularProgress with gauge guide
-let circularProgress = KYCircularProgress(frame: view.bounds, showProgressGuide: true)
+let circularProgress = KYCircularProgress(frame: view.bounds, showGuide: true)
 ```
 
 #### Gradation Color
@@ -48,13 +46,13 @@ let circularProgress = KYCircularProgress(frame: view.bounds, showProgressGuide:
 circularProgress.colors = [UIColor(rgba: 0xA6E39D11), UIColor(rgba: 0xAEC1E355), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABFF)]
 
 // combine Hex color and UIColor
-circularProgress.colors = [UIColor.purple, UIColor(rgba: 0xFFF77A55), UIColor.orange]
+circularProgress.colors = [.purple, UIColor(rgba: 0xFFF77A55), .orange]
 ```
 
 #### Progress Closure
 ```swift
-circularProgress.progressChangedClosure() {
-    (progress: Double, circularView: KYCircularProgress) in
+circularProgress.progressChanged {
+    (progress: Double, circularProgress: KYCircularProgress) in
     print("progress: \(progress)")
 }
 ```
@@ -105,7 +103,7 @@ $ brew install carthage
 To integrate KYCircularProgress into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "kentya6/KYCircularProgress" >= 0.6.0
+github "kentya6/KYCircularProgress" >= 1.0.0
 ```
 
 #### Manually
