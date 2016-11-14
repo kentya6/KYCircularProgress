@@ -35,6 +35,7 @@ open class KYCircularProgress: UIView {
             progressView.update(progress: clipProgress)
             
             progressChanged?(clipProgress, self)
+            delegate?.progressChanged(progress: clipProgress, circularProgress: self)
         }
     }
     
@@ -113,6 +114,8 @@ open class KYCircularProgress: UIView {
             progressGuideView.endAngle = endAngle
         }
     }
+    
+    open var delegate: KYCircularProgressDelegate?
     
     /**
     Typealias of progressChangedClosure.
@@ -225,6 +228,7 @@ open class KYCircularProgress: UIView {
         progressView.update(progress: clipProgress, duration: duration)
         
         progressChanged?(clipProgress, self)
+        delegate?.progressChanged(progress: clipProgress, circularProgress: self)
     }
     
     fileprivate func update(colors: [UIColor]) {
@@ -233,6 +237,10 @@ open class KYCircularProgress: UIView {
             gradientLayer.colors?.append(colors.first!.cgColor)
         }
     }
+}
+
+public protocol KYCircularProgressDelegate {
+    func progressChanged(progress: Double, circularProgress: KYCircularProgress)
 }
 
 // MARK: - KYCircularShapeView
