@@ -219,6 +219,13 @@ open class KYCircularProgress: UIView {
         progressChanged = completion
     }
 
+    public func set(progress: Double, duration: Double) {
+        let clipProgress = max( min(progress, Double(1.0)), Double(0.0) )
+        progressView.update(progress: clipProgress, duration: duration)
+        
+        progressChanged?(clipProgress, self)
+    }
+    
     fileprivate func update(colors: [UIColor]) {
         gradientLayer.colors = colors.map {$0.cgColor}
         if colors.count == 1 {
@@ -269,6 +276,18 @@ class KYCircularShapeView: UIView {
         CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
         shapeLayer.strokeEnd = CGFloat(progress)
         CATransaction.commit()
+    }
+    
+    fileprivate func update(progress: Double, duration: Double) {
+        CATransaction.begin()
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.duration = duration
+        animation.isRemovedOnCompletion = false
+        animation.fromValue = shapeLayer.strokeEnd
+        animation.toValue = progress
+        shapeLayer.add(animation, forKey: "animateStrokeEnd")
+        CATransaction.commit()
+        shapeLayer.strokeEnd = CGFloat(progress)
     }
 }
 
