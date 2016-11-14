@@ -46,13 +46,13 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="guideLineWidth">
                                         <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="progressGuideColor">
-                                        <color key="value" red="0.99215686270000003" green="0.53725490200000003" blue="0.56078431370000004" alpha="0.34899328859060402" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showProgressGuide" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="progress">
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="guideColor">
+                                        <color key="value" red="0.99215686270000003" green="0.53725490200000003" blue="0.56078431370000004" alpha="0.5" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showGuide" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IER-0Z-VRa" customClass="KYCircularProgress" customModule="KYCircularProgress">
@@ -68,13 +68,13 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="guideLineWidth">
                                         <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="progressGuideColor">
-                                        <color key="value" red="0.46472069406317673" green="0.65935546875000006" blue="0.33131324384193528" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showProgressGuide" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="progress">
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="guideColor">
+                                        <color key="value" red="0.4647206941" green="0.65935546879999996" blue="0.33131324379999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showGuide" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L7N-pS-OgH" customClass="KYCircularProgress" customModule="KYCircularProgress">
@@ -106,13 +106,13 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="guideLineWidth">
                                         <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="progressGuideColor">
-                                        <color key="value" red="0.090196078431372548" green="0.68235294117647061" blue="0.78431372549019607" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showProgressGuide" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="progress">
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="guideColor">
+                                        <color key="value" red="0.3294117647" green="0.72941176470000002" blue="0.92156862750000001" alpha="0.25" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showGuide" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>

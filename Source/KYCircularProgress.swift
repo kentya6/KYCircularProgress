@@ -53,26 +53,26 @@ open class KYCircularProgress: UIView {
      */
     @IBInspectable open var guideLineWidth: Double = 8.0 {
         didSet {
-            progressGuideView.shapeLayer.lineWidth = CGFloat(guideLineWidth)
+            guideView.shapeLayer.lineWidth = CGFloat(guideLineWidth)
         }
     }
     
     /**
      Progress guide bar color.
      */
-    @IBInspectable open var progressGuideColor: UIColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.2) {
+    @IBInspectable open var guideColor: UIColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.2) {
         didSet {
-            guideLayer.backgroundColor = progressGuideColor.cgColor
+            guideLayer.backgroundColor = guideColor.cgColor
         }
     }
     
     /**
      Switch of progress guide view. If you set to `true`, progress guide view is enabled.
      */
-    @IBInspectable open var showProgressGuide: Bool = false {
+    @IBInspectable open var showGuide: Bool = false {
         didSet {
-            progressGuideView.isHidden = !showProgressGuide
-            guideLayer.backgroundColor = showProgressGuide ? progressGuideColor.cgColor : UIColor.clear.cgColor
+            guideView.isHidden = !showGuide
+            guideLayer.backgroundColor = showGuide ? guideColor.cgColor : UIColor.clear.cgColor
         }
     }
     
@@ -82,7 +82,7 @@ open class KYCircularProgress: UIView {
     open var path: UIBezierPath? {
         didSet {
             progressView.shapeLayer.path = path?.cgPath
-            progressGuideView.shapeLayer.path = path?.cgPath
+            guideView.shapeLayer.path = path?.cgPath
         }
     }
     
@@ -101,7 +101,7 @@ open class KYCircularProgress: UIView {
     open var startAngle: Double = 0.0 {
         didSet {
             progressView.startAngle = startAngle
-            progressGuideView.startAngle = startAngle
+            guideView.startAngle = startAngle
         }
     }
     
@@ -111,7 +111,7 @@ open class KYCircularProgress: UIView {
     open var endAngle: Double = 0.0 {
         didSet {
             progressView.endAngle = endAngle
-            progressGuideView.endAngle = endAngle
+            guideView.endAngle = endAngle
         }
     }
     
@@ -157,16 +157,16 @@ open class KYCircularProgress: UIView {
     /**
     Guide view of `progressView`.
     */
-    fileprivate lazy var progressGuideView: KYCircularShapeView = {
-        let progressGuideView = KYCircularShapeView(frame: self.bounds)
-        progressGuideView.shapeLayer.fillColor = UIColor.clear.cgColor
-        progressGuideView.shapeLayer.lineWidth = CGFloat(self.guideLineWidth)
-        progressGuideView.radius = self.radius
+    fileprivate lazy var guideView: KYCircularShapeView = {
+        let guideView = KYCircularShapeView(frame: self.bounds)
+        guideView.shapeLayer.fillColor = UIColor.clear.cgColor
+        guideView.shapeLayer.lineWidth = CGFloat(self.guideLineWidth)
+        guideView.radius = self.radius
         self.progressView.radius = self.radius
-        progressGuideView.shapeLayer.path = self.progressView.shapeLayer.path
-        progressGuideView.shapeLayer.strokeColor = self.tintColor.cgColor
-        progressGuideView.update(progress: 1.0)
-        return progressGuideView
+        guideView.shapeLayer.path = self.progressView.shapeLayer.path
+        guideView.shapeLayer.strokeColor = self.tintColor.cgColor
+        guideView.update(progress: 1.0)
+        return guideView
     }()
     
     /**
@@ -174,9 +174,9 @@ open class KYCircularProgress: UIView {
     */
     fileprivate lazy var guideLayer: CALayer = {
         let guideLayer = CAGradientLayer(layer: self.layer)
-        guideLayer.frame = self.progressGuideView.frame
-        guideLayer.mask = self.progressGuideView.shapeLayer
-        guideLayer.backgroundColor = self.progressGuideColor.cgColor
+        guideLayer.frame = self.guideView.frame
+        guideLayer.mask = self.guideView.shapeLayer
+        guideLayer.backgroundColor = self.guideColor.cgColor
         guideLayer.zPosition = -1
         self.layer.addSublayer(guideLayer)
         return guideLayer
@@ -208,10 +208,10 @@ open class KYCircularProgress: UIView {
     - parameter frame: `KYCircularProgress` frame.
     - parameter showProgressGuide: If you set to `true`, progress guide view is enabled.
     */
-    public init(frame: CGRect, showProgressGuide: Bool) {
+    public init(frame: CGRect, showGuide: Bool) {
         super.init(frame: frame)
-        self.showProgressGuide = showProgressGuide
-        guideLayer.backgroundColor = showProgressGuide ? progressGuideColor.cgColor : UIColor.clear.cgColor
+        self.showGuide = showGuide
+        guideLayer.backgroundColor = showGuide ? guideColor.cgColor : UIColor.clear.cgColor
     }
     
     /**
