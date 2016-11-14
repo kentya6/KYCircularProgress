@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         
         let labelWidth = CGFloat(80.0)
         let textLabel = UILabel(frame: CGRect(x: (view.frame.width - labelWidth) / 2, y: (view.frame.height - labelWidth) / 4, width: labelWidth, height: 32.0))
-        textLabel.font = UIFont(name: "HelveticaNeue", size: 32)
+        textLabel.font = UIFont(name: "HelveticaNeue", size: 24)
         textLabel.textAlignment = .center
         textLabel.textColor = .green
         textLabel.alpha = 0.3
