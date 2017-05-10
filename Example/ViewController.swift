@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         halfCircularProgress.path = UIBezierPath(arcCenter: center, radius: CGFloat((halfCircularProgress.frame).width/3), startAngle: CGFloat(M_PI), endAngle: CGFloat(0.0), clockwise: true)
         halfCircularProgress.colors = [UIColor(rgba: 0xA6E39DAA), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABAA)]
         halfCircularProgress.guideColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.4)
-        
+      
         let labelWidth = CGFloat(80.0)
         let textLabel = UILabel(frame: CGRect(x: (view.frame.width - labelWidth) / 2, y: (view.frame.height - labelWidth) / 4, width: labelWidth, height: 32.0))
         textLabel.font = UIFont(name: "HelveticaNeue", size: 24)
@@ -63,7 +63,8 @@ class ViewController: UIViewController {
     private func configureFourColorCircularProgress() {
         fourColorCircularProgress = KYCircularProgress(frame: CGRect(x: 20.0, y: halfCircularProgress.frame.height/1.75, width: view.frame.width/3, height: view.frame.height/3))
         fourColorCircularProgress.colors = [UIColor(rgba: 0xA6E39D11), UIColor(rgba: 0xAEC1E355), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABFF)]
-        
+        fourColorCircularProgress.lineCap = "round"
+      
         view.addSubview(fourColorCircularProgress)
     }
     
