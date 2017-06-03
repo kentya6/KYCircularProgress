@@ -49,9 +49,9 @@ open class KYCircularProgress: UIView {
     }
   
     /**
-     Progress bar line cap. The cap style used when stroking the path. Options are `butt', `round' and `square'. Defaults to `butt'.
+     Progress bar line cap. The cap style used when stroking the path.
      */
-    @IBInspectable open var lineCap: String = "butt"{
+    @IBInspectable open var lineCap: String = kCALineCapButt {
         didSet {
             progressView.shapeLayer.lineCap = lineCap
         }
@@ -280,7 +280,7 @@ class KYCircularShapeView: UIView {
         super.layoutSubviews()
         
         if startAngle == endAngle {
-            endAngle = startAngle + (M_PI * 2)
+            endAngle = startAngle + (Double.pi * 2)
         }
 
         shapeLayer.path = shapeLayer.path ?? layoutPath().cgPath
