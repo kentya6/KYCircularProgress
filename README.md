@@ -90,7 +90,7 @@ Then, run the following command:
 $ pod install
 ```
 
-####Carthage (iOS 8+)
+#### Carthage (iOS 8+)
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
 
 You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
@@ -103,7 +103,7 @@ $ brew install carthage
 To integrate KYCircularProgress into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "kentya6/KYCircularProgress" >= 1.0.0
+github "kentya6/KYCircularProgress" >= 1.0.1
 ```
 
 #### Manually
@@ -113,7 +113,7 @@ Add `KYCircularProgress.swift` into your Xcode project.
 
 The MIT License (MIT)
 
-Copyright (c) 2014-2016 Kengo YOKOYAMA
+Copyright (c) 2014-2017 Kengo YOKOYAMA
 
 ## Author
 
