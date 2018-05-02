@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,11 +33,11 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="wAV-SK-Lnk" firstAttribute="leading" secondItem="vjj-bY-P2j" secondAttribute="leading" id="D9C-jH-3xi"/>
-                                    <constraint firstItem="wAV-SK-Lnk" firstAttribute="centerY" secondItem="vjj-bY-P2j" secondAttribute="centerY" id="X5m-zh-NFg"/>
-                                    <constraint firstAttribute="height" constant="130" id="ffE-cb-xue"/>
-                                    <constraint firstAttribute="width" constant="130" id="ozS-cf-qGS"/>
-                                    <constraint firstAttribute="trailing" secondItem="wAV-SK-Lnk" secondAttribute="trailing" id="tyj-nk-GN2"/>
+                                    <constraint firstAttribute="width" constant="130" id="0W9-gK-xwR"/>
+                                    <constraint firstAttribute="height" constant="130" id="1hd-7T-qa9"/>
+                                    <constraint firstAttribute="trailing" secondItem="wAV-SK-Lnk" secondAttribute="trailing" id="4A9-Lj-MbQ"/>
+                                    <constraint firstItem="wAV-SK-Lnk" firstAttribute="leading" secondItem="vjj-bY-P2j" secondAttribute="leading" id="NSX-UZ-yuY"/>
+                                    <constraint firstItem="wAV-SK-Lnk" firstAttribute="centerY" secondItem="vjj-bY-P2j" secondAttribute="centerY" id="dI9-qz-NgY"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
@@ -58,8 +58,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IER-0Z-VRa" customClass="KYCircularProgress" customModule="KYCircularProgress">
                                 <rect key="frame" x="229" y="517" width="130" height="130"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="lg0-5I-lH8"/>
-                                    <constraint firstAttribute="height" constant="130" id="qIB-8H-xQW"/>
+                                    <constraint firstAttribute="height" constant="130" id="MGs-Jv-lG6"/>
+                                    <constraint firstAttribute="width" constant="130" id="zNt-af-VEj"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
@@ -82,22 +82,18 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBW-Ro-kb2">
                                         <rect key="frame" x="0.0" y="55" width="130" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="130" id="agT-xY-7qR"/>
-                                            <constraint firstAttribute="height" constant="21" id="sKR-Xa-wls"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="3J5-ES-bGK"/>
-                                    <constraint firstItem="aBW-Ro-kb2" firstAttribute="centerY" secondItem="L7N-pS-OgH" secondAttribute="centerY" id="lVm-Zs-GOs"/>
-                                    <constraint firstAttribute="height" constant="130" id="pEx-5X-K0C"/>
-                                    <constraint firstItem="aBW-Ro-kb2" firstAttribute="leading" secondItem="L7N-pS-OgH" secondAttribute="leading" id="sAQ-4Q-bKM"/>
-                                    <constraint firstAttribute="trailing" secondItem="aBW-Ro-kb2" secondAttribute="trailing" id="wmd-vR-OfB"/>
-                                    <constraint firstItem="aBW-Ro-kb2" firstAttribute="centerX" secondItem="L7N-pS-OgH" secondAttribute="centerX" id="wqq-yZ-6K4"/>
+                                    <constraint firstAttribute="height" constant="130" id="BnV-Tw-0o1"/>
+                                    <constraint firstItem="aBW-Ro-kb2" firstAttribute="leading" secondItem="L7N-pS-OgH" secondAttribute="leading" id="IEk-0s-Uzg"/>
+                                    <constraint firstItem="aBW-Ro-kb2" firstAttribute="top" secondItem="L7N-pS-OgH" secondAttribute="top" constant="55" id="Lma-px-YQU"/>
+                                    <constraint firstAttribute="width" constant="130" id="cXn-Oz-FcA"/>
+                                    <constraint firstItem="aBW-Ro-kb2" firstAttribute="centerY" secondItem="L7N-pS-OgH" secondAttribute="centerY" id="hh1-No-SiP"/>
+                                    <constraint firstAttribute="trailing" secondItem="aBW-Ro-kb2" secondAttribute="trailing" id="uDw-As-IUA"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
@@ -116,16 +112,15 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.56515625000000003" green="0.56515625000000003" blue="0.56515625000000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="vjj-bY-P2j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9W7-qX-U4x"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IER-0Z-VRa" secondAttribute="bottom" constant="20" id="Tv7-sV-d0Q"/>
-                            <constraint firstItem="vjj-bY-P2j" firstAttribute="bottom" secondItem="IER-0Z-VRa" secondAttribute="bottom" id="VzH-Mb-kwl"/>
-                            <constraint firstItem="L7N-pS-OgH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gD5-kU-j41"/>
-                            <constraint firstItem="vjj-bY-P2j" firstAttribute="top" secondItem="L7N-pS-OgH" secondAttribute="bottom" constant="41" id="k8c-K8-AoF"/>
-                            <constraint firstItem="IER-0Z-VRa" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="tBf-uN-fkc"/>
-                            <constraint firstItem="vjj-bY-P2j" firstAttribute="top" secondItem="IER-0Z-VRa" secondAttribute="top" id="vFq-G3-Wea"/>
-                            <constraint firstItem="L7N-pS-OgH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w1Z-hq-HXj"/>
+                            <constraint firstItem="vjj-bY-P2j" firstAttribute="top" secondItem="IER-0Z-VRa" secondAttribute="top" id="1BM-bG-KA7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="L7N-pS-OgH" secondAttribute="bottom" constant="191" id="8FF-x7-jCa"/>
+                            <constraint firstAttribute="bottom" secondItem="vjj-bY-P2j" secondAttribute="bottom" constant="20" symbolic="YES" id="AYu-QI-4wf"/>
+                            <constraint firstItem="IER-0Z-VRa" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="G99-20-YWf"/>
+                            <constraint firstItem="vjj-bY-P2j" firstAttribute="bottom" secondItem="IER-0Z-VRa" secondAttribute="bottom" id="Xze-mX-X3d"/>
+                            <constraint firstItem="L7N-pS-OgH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dq1-U8-6cd"/>
+                            <constraint firstItem="vjj-bY-P2j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pAJ-xR-AAB"/>
                         </constraints>
                     </view>
                     <connections>
