@@ -134,12 +134,12 @@ open class KYCircularProgress: UIView {
     /**
     This closure is called when set value to `progress` property.
     */
-    fileprivate var progressChanged: progressChangedHandler?
+    private var progressChanged: progressChangedHandler?
     
     /**
     Main progress view.
     */
-    fileprivate lazy var progressView: KYCircularShapeView = {
+    private lazy var progressView: KYCircularShapeView = {
         let progressView = KYCircularShapeView(frame: self.bounds)
         progressView.shapeLayer.fillColor = UIColor.clear.cgColor
         progressView.shapeLayer.lineWidth = CGFloat(self.lineWidth)
@@ -153,7 +153,7 @@ open class KYCircularProgress: UIView {
     /**
     Gradient mask layer of `progressView`.
     */
-    fileprivate lazy var gradientLayer: CAGradientLayer = {
+    private lazy var gradientLayer: CAGradientLayer = {
         let gradientLayer = CAGradientLayer(layer: self.layer)
         gradientLayer.frame = self.progressView.frame
         gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
@@ -167,7 +167,7 @@ open class KYCircularProgress: UIView {
     /**
     Guide view of `progressView`.
     */
-    fileprivate lazy var guideView: KYCircularShapeView = {
+    private lazy var guideView: KYCircularShapeView = {
         let guideView = KYCircularShapeView(frame: self.bounds)
         guideView.shapeLayer.fillColor = UIColor.clear.cgColor
         guideView.shapeLayer.lineWidth = CGFloat(self.guideLineWidth)
@@ -182,7 +182,7 @@ open class KYCircularProgress: UIView {
     /**
     Mask layer of `progressGuideView`.
     */
-    fileprivate lazy var guideLayer: CALayer = {
+    private lazy var guideLayer: CALayer = {
         let guideLayer = CAGradientLayer(layer: self.layer)
         guideLayer.frame = self.guideView.frame
         guideLayer.mask = self.guideView.shapeLayer
@@ -241,7 +241,7 @@ open class KYCircularProgress: UIView {
         delegate?.progressChanged(progress: clipProgress, circularProgress: self)
     }
     
-    fileprivate func update(colors: [UIColor]) {
+    private func update(colors: [UIColor]) {
         gradientLayer.colors = colors.map {$0.cgColor}
         if colors.count == 1 {
             gradientLayer.colors?.append(colors.first!.cgColor)

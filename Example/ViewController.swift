@@ -18,8 +18,8 @@ class ViewController: UIViewController {
     private var animationProgress: UInt8 = 0
     @IBOutlet private weak var storyboardCircularProgress1: KYCircularProgress!
     @IBOutlet private weak var progressLabel: UILabel!
-    @IBOutlet fileprivate weak var storyboardCircularProgress2: KYCircularProgress!
-    @IBOutlet fileprivate weak var progressLabel2: UILabel!
+    @IBOutlet private weak var storyboardCircularProgress2: KYCircularProgress!
+    @IBOutlet private weak var progressLabel2: UILabel!
     @IBOutlet private weak var storyboardCircularProgress3: KYCircularProgress!
     
     override func viewDidLoad() {
