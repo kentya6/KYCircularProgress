@@ -114,11 +114,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.56515625000000003" green="0.56515625000000003" blue="0.56515625000000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="vjj-bY-P2j" firstAttribute="top" secondItem="IER-0Z-VRa" secondAttribute="top" id="1BM-bG-KA7"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="L7N-pS-OgH" secondAttribute="bottom" constant="191" id="8FF-x7-jCa"/>
                             <constraint firstAttribute="bottom" secondItem="vjj-bY-P2j" secondAttribute="bottom" constant="20" symbolic="YES" id="AYu-QI-4wf"/>
                             <constraint firstItem="IER-0Z-VRa" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="G99-20-YWf"/>
-                            <constraint firstItem="vjj-bY-P2j" firstAttribute="bottom" secondItem="IER-0Z-VRa" secondAttribute="bottom" id="Xze-mX-X3d"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IER-0Z-VRa" secondAttribute="bottom" constant="20" id="MZY-aq-c3D"/>
                             <constraint firstItem="L7N-pS-OgH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dq1-U8-6cd"/>
                             <constraint firstItem="vjj-bY-P2j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pAJ-xR-AAB"/>
                         </constraints>
@@ -127,7 +126,7 @@
                         <outlet property="progressLabel" destination="aBW-Ro-kb2" id="mef-rc-Iha"/>
                         <outlet property="progressLabel2" destination="wAV-SK-Lnk" id="spL-Ms-g5t"/>
                         <outlet property="storyboardCircularProgress1" destination="L7N-pS-OgH" id="yjc-C8-fuh"/>
-                        <outlet property="storyboardCircularProgress2" destination="vjj-bY-P2j" id="2GX-Yj-Kry"/>
+                        <outlet property="storyboardCircularProgress2" destination="vjj-bY-P2j" id="uw0-bi-pXx"/>
                         <outlet property="storyboardCircularProgress3" destination="IER-0Z-VRa" id="bW0-XP-bVF"/>
                     </connections>
                 </viewController>
