@@ -303,7 +303,7 @@ class KYCircularShapeView: UIView {
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.duration = duration
         animation.isRemovedOnCompletion = false
-        animation.fromValue = shapeLayer.strokeEnd
+        animation.fromValue = shapeLayer.presentation()?.value(forKeyPath: "strokeEnd") as? CGFloat
         animation.toValue = progress
         shapeLayer.add(animation, forKey: "animateStrokeEnd")
         CATransaction.commit()
