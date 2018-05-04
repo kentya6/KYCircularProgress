@@ -18,8 +18,8 @@ class ViewController: UIViewController {
     private var animationProgress: UInt8 = 0
     @IBOutlet private weak var storyboardCircularProgress1: KYCircularProgress!
     @IBOutlet private weak var progressLabel: UILabel!
-    @IBOutlet fileprivate weak var storyboardCircularProgress2: KYCircularProgress!
-    @IBOutlet fileprivate weak var progressLabel2: UILabel!
+    @IBOutlet private weak var storyboardCircularProgress2: KYCircularProgress!
+    @IBOutlet private weak var progressLabel2: UILabel!
     @IBOutlet private weak var storyboardCircularProgress3: KYCircularProgress!
     
     override func viewDidLoad() {
@@ -61,15 +61,14 @@ class ViewController: UIViewController {
     }
     
     private func configureFourColorCircularProgress() {
-        fourColorCircularProgress = KYCircularProgress(frame: CGRect(x: 20.0, y: halfCircularProgress.frame.height/1.75, width: view.frame.width/3, height: view.frame.height/3))
+        fourColorCircularProgress = KYCircularProgress(frame: CGRect(x: 20.0, y: halfCircularProgress.frame.height/1.75, width: view.frame.width/3, height: view.frame.width/3))
         fourColorCircularProgress.colors = [UIColor(rgba: 0xA6E39D11), UIColor(rgba: 0xAEC1E355), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABFF)]
         fourColorCircularProgress.lineCap = kCALineCapRound
-      
         view.addSubview(fourColorCircularProgress)
     }
     
     private func configureStarProgress() {
-        starProgress = KYCircularProgress(frame: CGRect(x: view.frame.width - 150.0, y: halfCircularProgress.frame.height/1.5, width: view.frame.width/3, height: view.frame.height/3))
+        starProgress = KYCircularProgress(frame: CGRect(x: view.frame.width - 150.0, y: halfCircularProgress.frame.height/1.5, width: view.frame.width/3, height: view.frame.width/3))
         
         starProgress.colors = [.purple, UIColor(rgba: 0xFFF77A55), .orange]
         starProgress.lineWidth = 3.0
@@ -108,7 +107,6 @@ class ViewController: UIViewController {
         path.addLine(to: CGPoint(x: 17.0, y: 86.0))
         path.close()
         storyboardCircularProgress3.path = path
-        
         storyboardCircularProgress3.colors = [.white, .groupTableViewBackground, .gray, .darkGray]
     }
     
