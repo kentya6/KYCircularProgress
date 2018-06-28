@@ -31,8 +31,8 @@ open class KYCircularProgress: UIView {
      */
     @IBInspectable open var progress: Double = 0.0 {
         didSet {
-            let clipProgress = max( min(progress, Double(1.0)), Double(0.0) )
-            progressView.update(progress: clipProgress)
+            let clipProgress = max( min( progress, 1.0), 0.0 )
+            progressView.update(progress: normalize(progress: clipProgress))
             
             progressChanged?(clipProgress, self)
             delegate?.progressChanged(progress: clipProgress, circularProgress: self)
@@ -105,22 +105,22 @@ open class KYCircularProgress: UIView {
     }
     
     /**
-     Progress start angle.
+     Progress start offset. (0.0 - 1.0)
      */
-    open var startAngle: Double = 0.0 {
+    @IBInspectable open var strokeStart: Double = 0.0 {
         didSet {
-            progressView.startAngle = startAngle
-            guideView.startAngle = startAngle
+            progressView.shapeLayer.strokeStart = CGFloat(max( min(strokeStart, 1.0), 0.0 ))
+            guideView.shapeLayer.strokeStart = CGFloat(max( min(strokeStart, 1.0), 0.0 ))
         }
     }
     
     /**
-     Progress end angle.
+     Progress end offset. (0.0 - 1.0)
      */
-    open var endAngle: Double = 0.0 {
+    @IBInspectable open var strokeEnd: Double = 1.0 {
         didSet {
-            progressView.endAngle = endAngle
-            guideView.endAngle = endAngle
+            progressView.shapeLayer.strokeEnd = CGFloat(max( min(strokeEnd, 1.0), 0.0 ))
+            guideView.shapeLayer.strokeEnd = CGFloat(max( min(strokeEnd, 1.0), 0.0 ))
         }
     }
   
@@ -175,7 +175,7 @@ open class KYCircularProgress: UIView {
         self.progressView.radius = self.radius
         guideView.shapeLayer.path = self.progressView.shapeLayer.path
         guideView.shapeLayer.strokeColor = self.tintColor.cgColor
-        guideView.update(progress: 1.0)
+        guideView.update(progress: normalize(progress: 1.0))
         return guideView
     }()
     
@@ -234,8 +234,8 @@ open class KYCircularProgress: UIView {
     }
 
     public func set(progress: Double, duration: Double) {
-        let clipProgress = max( min(progress, Double(1.0)), Double(0.0) )
-        progressView.update(progress: clipProgress, duration: duration)
+        let clipProgress = max( min(progress, 1.0), 0.0 )
+        progressView.update(progress: normalize(progress: clipProgress), duration: duration)
         
         progressChanged?(clipProgress, self)
         delegate?.progressChanged(progress: clipProgress, circularProgress: self)
@@ -246,6 +246,10 @@ open class KYCircularProgress: UIView {
         if colors.count == 1 {
             progressLayer.colors?.append(colors.first!.cgColor)
         }
+    }
+    
+    private func normalize(progress: Double) -> CGFloat {
+        return CGFloat(strokeStart + progress * (strokeEnd - strokeStart))
     }
     
     override open func layoutSubviews() {
@@ -267,8 +271,6 @@ public protocol KYCircularProgressDelegate {
 
 // MARK: - KYCircularShapeView
 class KYCircularShapeView: UIView {
-    var startAngle = 0.0
-    var endAngle = 0.0
     var radius = 0.0
     var scale: (x: CGFloat, y: CGFloat) = (1.0, 1.0)
     
@@ -292,9 +294,6 @@ class KYCircularShapeView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        if startAngle == endAngle {
-            endAngle = startAngle + (Double.pi * 2)
-        }
         shapeLayer.path = shapeLayer.path ?? layoutPath().cgPath
         var affineScale = CGAffineTransform(scaleX: scale.x, y: scale.y)
         shapeLayer.path = shapeLayer.path?.copy(using: &affineScale)
@@ -302,17 +301,17 @@ class KYCircularShapeView: UIView {
     
     private func layoutPath() -> UIBezierPath {
         let halfWidth = CGFloat(frame.width / 2.0)
-        return UIBezierPath(arcCenter: CGPoint(x: halfWidth, y: halfWidth), radius: (frame.width - CGFloat(radius)) / 2, startAngle: CGFloat(startAngle), endAngle: CGFloat(endAngle), clockwise: true)
+        return UIBezierPath(arcCenter: CGPoint(x: halfWidth, y: halfWidth), radius: (frame.width - CGFloat(radius)) / 2, startAngle: 0, endAngle: CGFloat(Double.pi * 2), clockwise: true)
     }
     
-    fileprivate func update(progress: Double) {
+    fileprivate func update(progress: CGFloat) {
         CATransaction.begin()
         CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
-        shapeLayer.strokeEnd = CGFloat(progress)
+        shapeLayer.strokeEnd = progress
         CATransaction.commit()
     }
     
-    fileprivate func update(progress: Double, duration: Double) {
+    fileprivate func update(progress: CGFloat, duration: Double) {
         CATransaction.begin()
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.duration = duration
@@ -321,7 +320,7 @@ class KYCircularShapeView: UIView {
         animation.toValue = progress
         shapeLayer.add(animation, forKey: "animateStrokeEnd")
         CATransaction.commit()
-        shapeLayer.strokeEnd = CGFloat(progress)
+        shapeLayer.strokeEnd = progress
     }
 }
 
