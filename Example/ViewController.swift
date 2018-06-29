@@ -39,7 +39,8 @@ class ViewController: UIViewController {
     private func configureHalfCircularProgress() {
         halfCircularProgress = KYCircularProgress(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height/2), showGuide: true)
         let center = CGPoint(x: view.frame.width / 2, y: view.frame.height / 4)
-        halfCircularProgress.path = UIBezierPath(arcCenter: center, radius: CGFloat((halfCircularProgress.frame).width/3), startAngle: CGFloat(Double.pi), endAngle: CGFloat(0.0), clockwise: true)
+        halfCircularProgress.path = UIBezierPath(arcCenter: center, radius: CGFloat((halfCircularProgress.frame).width/3), startAngle: 0, endAngle: CGFloat(Double.pi * 2), clockwise: true)
+        halfCircularProgress.strokeStart = 0.5
         halfCircularProgress.colors = [UIColor(rgba: 0xA6E39DAA), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABAA)]
         halfCircularProgress.guideColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.4)
       

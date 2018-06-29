@@ -103,7 +103,7 @@ $ brew install carthage
 To integrate KYCircularProgress into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "kentya6/KYCircularProgress" >= 1.1.0
+github "kentya6/KYCircularProgress" >= 1.2.0
 ```
 
 #### Manually
