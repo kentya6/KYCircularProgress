@@ -28,7 +28,7 @@ Flexible progress bar written in Swift.
 </p>
 
 ## Requirement
-- Swift4
+- Swift4.2
 
 ## Usage
 #### Create KYCircularProgress
@@ -103,7 +103,7 @@ $ brew install carthage
 To integrate KYCircularProgress into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "kentya6/KYCircularProgress" >= 1.2.0
+github "kentya6/KYCircularProgress" >= 1.2.1
 ```
 
 #### Manually
