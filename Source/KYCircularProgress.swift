@@ -51,9 +51,9 @@ open class KYCircularProgress: UIView {
     /**
      Progress bar line cap. The cap style used when stroking the path.
      */
-    @IBInspectable open var lineCap: String = kCALineCapButt {
+    @IBInspectable open var lineCap: String = CAShapeLayerLineCap.butt.rawValue {
         didSet {
-            progressView.shapeLayer.lineCap = lineCap
+            progressView.shapeLayer.lineCap = CAShapeLayerLineCap(rawValue: lineCap)
         }
     }
   
@@ -143,7 +143,7 @@ open class KYCircularProgress: UIView {
         let progressView = KYCircularShapeView(frame: self.bounds)
         progressView.shapeLayer.fillColor = UIColor.clear.cgColor
         progressView.shapeLayer.lineWidth = CGFloat(self.lineWidth)
-        progressView.shapeLayer.lineCap = self.lineCap
+        progressView.shapeLayer.lineCap = CAShapeLayerLineCap(rawValue: self.lineCap)
         progressView.radius = self.radius
         progressView.shapeLayer.path = self.path?.cgPath
         progressView.shapeLayer.strokeColor = self.tintColor.cgColor
